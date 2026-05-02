@@ -136,17 +136,86 @@ const Skills = () => {
                   </div>
                   <canvas id={chartByDomain[tab.id].id} style={{ maxHeight: '280px' }}></canvas>
                 </div>
-                <div className="skills-list-card">
-                  <div className="about-chart-title">Tools & Teknik</div>
-                  <div className="tool-tags" style={{ marginTop: '1rem' }}>
-                    {toolsByDomain[tab.id].map((tool) => (
-                      <span className="tool-tag" key={tool.label}>
-                        <i className={tool.icon.startsWith('fa-brands') ? tool.icon : `fa-solid ${tool.icon}`}></i>{' '}
-                        {tool.label}
-                      </span>
-                    ))}
+
+                {/* Physics */}
+                {tab.id === 'physics' && (
+                  <div className="skills-list-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                    <div>
+                      <div className="about-chart-title">Bidang yang Dipelajari</div>
+                      <div className="tool-tags" style={{ marginTop: '1rem' }}>
+                        {toolsByDomain['physics'].map((tool) => (
+                          <span className="tool-tag" key={tool.label}>
+                            <i className={tool.icon.startsWith('fa-brands') ? tool.icon : `fa-solid ${tool.icon}`}></i>{' '}
+                            {tool.label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="about-chart-title">Pendekatan Ilmiah</div>
+                      <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'var(--text-muted)', marginTop: '0.75rem' }}>
+                        Sebagai mahasiswa Fisika UIN Jakarta, saya mendekati setiap masalah dengan metode ilmiah — hipotesis,
+                        observasi, analisis. Pola pikir ini yang menghubungkan fisika dengan cybersecurity.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
+
+                {/* Cyber */}
+                {tab.id === 'cyber' && (
+                  <div className="skills-list-card">
+                    <div className="about-chart-title">Tools & Teknik</div>
+                    <div className="tool-tags" style={{ marginTop: '1rem' }}>
+                      {toolsByDomain['cyber'].map((tool) => (
+                        <span className="tool-tag" key={tool.label}>
+                          <i className={tool.icon.startsWith('fa-brands') ? tool.icon : `fa-solid ${tool.icon}`}></i>{' '}
+                          {tool.label}
+                        </span>
+                      ))}
+                    </div>
+                    <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', lineHeight: 1.7, marginTop: '1.25rem' }}>
+                      Aktif mengikuti CTF (Capture The Flag) internasional maupun nasional dan berbagai tantangan keamanan
+                      siber — mencakup web exploitation, binary, digital forensics, dan OSINT. Pencapaian Terakhir Meraih
+                      peringkat 59/697 pada Ramadan CTF 2026.
+                    </p>
+                  </div>
+                )}
+
+                {/* Design */}
+                {tab.id === 'design' && (
+                  <div className="skills-list-card">
+                    <div className="about-chart-title">Tools Desain & Editing</div>
+                    <div className="tool-tags" style={{ marginTop: '1rem' }}>
+                      {toolsByDomain['design'].map((tool) => (
+                        <span className="tool-tag" key={tool.label}>
+                          <i className={tool.icon.startsWith('fa-brands') ? tool.icon : `fa-solid ${tool.icon}`}></i>{' '}
+                          {tool.label}
+                        </span>
+                      ))}
+                    </div>
+                    <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', lineHeight: 1.7, marginTop: '1.25rem' }}>
+                      Latar belakang <strong style={{ color: 'var(--text-secondary)' }}>Desain Komunikasi Visual</strong> di
+                      SMKS Sasmita Jaya 1 selama 3 tahun membangun kepekaan visual, komposisi, dan kemampuan bercerita lewat
+                      gambar — fondasi yang memperkuat desain UI web sampai forensics report.
+                    </p>
+                  </div>
+                )}
+
+                {/* Web */}
+                {tab.id === 'web' && (
+                  <div className="skills-list-card">
+                    <div className="about-chart-title">Tech Stack</div>
+                    <div className="tool-tags" style={{ marginTop: '1rem' }}>
+                      {toolsByDomain['web'].map((tool) => (
+                        <span className="tool-tag" key={tool.label}>
+                          <i className={tool.icon.startsWith('fa-brands') ? tool.icon : `fa-solid ${tool.icon}`}></i>{' '}
+                          {tool.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
               </div>
             </div>
           ))}

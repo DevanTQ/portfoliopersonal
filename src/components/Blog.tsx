@@ -23,8 +23,11 @@ const Blog = () => {
     fetch(BLOGGER_RSS)
       .then((res) => res.json())
       .then((data) => {
+        console.log('raw:', data)
         const parsed = JSON.parse(data.contents);
+        console.log('parsed:', parsed)
         const entries = parsed.feed.entry || [];
+        console.log('entries:', entries)
         const posts: BlogPost[] = entries.slice(0, 6).map((entry: any) => ({
           icon: "fa-pen-nib",
           cat: entry.category?.[0]?.term || "Blog",

@@ -1,44 +1,51 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 type BlogPost = {
-  icon: string
-  cat: string
-  title: string
-  excerpt: string
-  date: string
-  href: string
-}
+  icon: string;
+  cat: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  href: string;
+};
 
-const BLOGGER_RSS = 'https://northfous.blogspot.com/feeds/posts/default?alt=json'
+const BLOGGER_RSS =
+  "https://api.allorigins.win/get?url=" +
+  encodeURIComponent(
+    "https://northfous.blogspot.com/feeds/posts/default?alt=json",
+  );
 
 const Blog = () => {
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([])
-  const [loading, setLoading] = useState(true)
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(BLOGGER_RSS)
       .then((res) => res.json())
       .then((data) => {
-        const entries = data.feed.entry || []
+        const parsed = JSON.parse(data.contents);
+        const entries = parsed.feed.entry || [];
         const posts: BlogPost[] = entries.slice(0, 6).map((entry: any) => ({
-          icon: 'fa-pen-nib',
-          cat: entry.category?.[0]?.term || 'Blog',
+          icon: "fa-pen-nib",
+          cat: entry.category?.[0]?.term || "Blog",
           title: entry.title.$t,
           excerpt:
-            entry.summary?.$t?.replace(/<[^>]+>/g, '').slice(0, 120) + '...' || '',
-          date: new Date(entry.published.$t).toLocaleDateString('id-ID', {
-            month: 'short',
-            year: 'numeric',
+            entry.summary?.$t?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." ||
+            entry.content?.$t?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." ||
+            "",
+          date: new Date(entry.published.$t).toLocaleDateString("id-ID", {
+            month: "short",
+            year: "numeric",
           }),
-          href: entry.link.find((l: any) => l.rel === 'alternate')?.href || '#',
-        }))
-        setBlogPosts(posts)
+          href: entry.link.find((l: any) => l.rel === "alternate")?.href || "#",
+        }));
+        setBlogPosts(posts);
       })
       .catch(() => setBlogPosts([]))
-      .finally(() => setLoading(false))
-  }, [])
+      .finally(() => setLoading(false));
+  }, []);
 
-  const isCompact = blogPosts.length < 3
+  const isCompact = blogPosts.length < 3;
 
   return (
     <section id="blog" className="full">
@@ -46,7 +53,8 @@ const Blog = () => {
         <div className="section-label reveal">Blog & Writing</div>
         <h2 className="section-title reveal">Tulisan Terbaru</h2>
         <p className="section-desc reveal">
-          Catatan, pemikiran, dan eksplorasi tentang sains, teknologi, dan hal-hal yang sedang saya pelajari.
+          Catatan, pemikiran, dan eksplorasi tentang sains, teknologi, dan
+          hal-hal yang sedang saya pelajari.
         </p>
 
         {loading ? (
@@ -63,7 +71,7 @@ const Blog = () => {
         ) : (
           <>
             <div
-              className={`blog-grid${isCompact ? ' blog-grid-compact' : ''}`}
+              className={`blog-grid${isCompact ? " blog-grid-compact" : ""}`}
               id="blogGrid"
             >
               {blogPosts.map((post) => (
@@ -77,7 +85,12 @@ const Blog = () => {
                     <div className="blog-excerpt">{post.excerpt}</div>
                     <div className="blog-meta">
                       <span className="blog-date">{post.date}</span>
-                      <a href={post.href} className="blog-read" target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={post.href}
+                        className="blog-read"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Baca <i className="fa-solid fa-arrow-right"></i>
                       </a>
                     </div>
@@ -88,7 +101,7 @@ const Blog = () => {
 
             {blogPosts.length >= 3 && (
               <div
-                style={{ textAlign: 'center', marginTop: '3rem' }}
+                style={{ textAlign: "center", marginTop: "3rem" }}
                 className="reveal"
                 id="blogMoreBtn"
               >
@@ -98,8 +111,11 @@ const Blog = () => {
                   rel="noopener noreferrer"
                   className="btn-secondary"
                 >
-                  Semua Tulisan{' '}
-                  <i className="fa-solid fa-arrow-right" style={{ marginLeft: '0.25rem' }}></i>
+                  Semua Tulisan{" "}
+                  <i
+                    className="fa-solid fa-arrow-right"
+                    style={{ marginLeft: "0.25rem" }}
+                  ></i>
                 </a>
               </div>
             )}
@@ -107,7 +123,7 @@ const Blog = () => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

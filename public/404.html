@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Halaman Tidak Ditemukan | Devandra El Syadam</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+
+  <style>
+    /* ── CSS Variables (sama persis dengan main.css) ── */
+    :root {
+      --c0: #080808;
+      --c1: #0f0f0f;
+      --c2: #161616;
+      --c3: #1e1e1e;
+      --c4: #2a2a2a;
+      --c5: #3a3a3a;
+
+      --text-primary: #f5f5f5;
+      --text-secondary: #8a8a8a;
+      --text-muted: #525252;
+
+      --accent: #e8e8e8;
+      --accent-gold: #c9a96e;
+      --accent-glow: rgba(201, 169, 110, 0.18);
+
+      --border: rgba(255, 255, 255, 0.07);
+      --border-hover: rgba(255, 255, 255, 0.16);
+
+      --font-display: 'Syne', 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--c0);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Background sama dengan hero section ── */
+    body {
+      background:
+        radial-gradient(ellipse 70% 55% at 65% 35%, rgba(201, 169, 110, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 15% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 55%),
+        linear-gradient(180deg, #0a0a0a 0%, var(--c0) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      padding-top: calc(72px + 2rem);
+      text-align: center;
+    }
+
+    /* ── Grid overlay sama dengan hero ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      width: 100%;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* ── 404 number ── */
+    .err-number {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+      /* Gold accent di tengah */
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, var(--accent-gold) 50%, rgba(255,255,255,0.06) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Section label sama dengan main.css ── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Title & desc sama dengan main.css ── */
+    .err-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .err-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Divider tipis sama dengan gradient-divider ── */
+    .err-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 2rem auto;
+      width: 100%;
+    }
+
+    /* ── Buttons sama persis dengan main.css ── */
+    .btn-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      background: var(--text-primary);
+      color: #080808;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+      font-family: var(--font-body);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.88;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      background: transparent;
+      color: var(--text-primary);
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: var(--font-body);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--border-hover);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* ── Nav logo kecil di atas ── */
+    .err-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8,8,8,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 100;
+    }
+
+    .err-nav-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Subtle glow di belakang angka ── */
+    .err-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 480px) {
+      .btn-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar minimal -->
+  <nav class="err-nav">
+    <a href="/" class="err-nav-logo">Devandra El Syadam</a>
+  </nav>
+
+  <!-- Glow background -->
+  <div class="err-glow"></div>
+
+  <div class="container">
+    <div class="section-label">Error 404</div>
+    <div class="err-number">404</div>
+
+    <div class="err-divider"></div>
+
+    <h1 class="err-title">Halaman Tidak Ditemukan</h1>
+    <p class="err-desc">
+      Sepertinya halaman yang kamu cari sudah dipindah, dihapus,
+      atau memang tidak pernah ada.
+    </p>
+
+    <div class="btn-actions">
+      <a href="/" class="btn-primary">
+        <i class="fa-solid fa-house"></i> Balik ke Home
+      </a>
+      <a href="/#contact" class="btn-secondary">
+        <i class="fa-regular fa-envelope"></i> Hubungi Saya
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

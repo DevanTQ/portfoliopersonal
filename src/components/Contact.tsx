@@ -8,8 +8,8 @@ type FormData = {
 }
 
 const contactItems = [
-  { icon: 'fa-regular fa-envelope', label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
-  { icon: 'fa-solid fa-location-dot', label: 'Lokasi',      val: 'Tangerang Selatan, Banten, Indonesia' },
+  { icon: 'fa-regular fa-envelope',  label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
+  { icon: 'fa-solid fa-location-dot', label: 'Lokasi',       val: 'Tangerang Selatan, Banten, Indonesia' },
   { icon: 'fa-solid fa-clock',        label: 'Response Time', val: 'Dalam 24 jam kerja' },
 ]
 
@@ -39,14 +39,22 @@ const Contact = () => {
       ...formData,
     }).toString()
 
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
-    })
+    try {
+      const res = await fetch(window.location.href, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      })
 
-    setFormData({ nama: '', email: '', subjek: '', pesan: '' })
-    alert('Pesan terkirim!')
+      if (res.ok) {
+        setFormData({ nama: '', email: '', subjek: '', pesan: '' })
+        alert('Pesan terkirim!')
+      } else {
+        alert('Gagal mengirim pesan. Coba lagi.')
+      }
+    } catch {
+      alert('Terjadi kesalahan. Coba lagi.')
+    }
   }
 
   return (

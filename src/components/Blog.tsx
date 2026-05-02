@@ -9,38 +9,30 @@ type BlogPost = {
   href: string;
 };
 
-const BLOGGER_RSS =
-  "https://api.allorigins.win/get?url=" +
-  encodeURIComponent(
-    "https://northfous.blogspot.com/feeds/posts/default?alt=json",
-  );
+const BLOG_ID = "6370908641104516933";
+const API_KEY = "AIzaSyA0ZTb9EgQWJ25dxb8g6qM3x8eGQ01LCus";
+const BLOGGER_API = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&maxResults=6`;
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(BLOGGER_RSS)
+    fetch(BLOGGER_API)
       .then((res) => res.json())
       .then((data) => {
-        console.log('raw:', data)
-        const parsed = JSON.parse(data.contents);
-        console.log('parsed:', parsed)
-        const entries = parsed.feed.entry || [];
-        console.log('entries:', entries)
-        const posts: BlogPost[] = entries.slice(0, 6).map((entry: any) => ({
+        const entries = data.items || [];
+        const posts: BlogPost[] = entries.map((entry: any) => ({
           icon: "fa-pen-nib",
-          cat: entry.category?.[0]?.term || "Blog",
-          title: entry.title.$t,
+          cat: entry.labels?.[0] || "Blog",
+          title: entry.title,
           excerpt:
-            entry.summary?.$t?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." ||
-            entry.content?.$t?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." ||
-            "",
-          date: new Date(entry.published.$t).toLocaleDateString("id-ID", {
+            entry.content?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." || "",
+          date: new Date(entry.published).toLocaleDateString("id-ID", {
             month: "short",
             year: "numeric",
           }),
-          href: entry.link.find((l: any) => l.rel === "alternate")?.href || "#",
+          href: entry.url || "#",
         }));
         setBlogPosts(posts);
       })

@@ -1025,8 +1025,6 @@ section.full {
     font-size: 0.85rem;
 }
 
-
-/* ── Domain Tabs ── */
 .domain-tabs {
     display: flex;
     gap: 0.5rem;
@@ -1538,8 +1536,6 @@ section.full {
     margin-top: 3.5rem;
 }
 
-/* FIX #5: Kalau post < 3, card tidak stretch full width.
-   Max 2 kolom, dan centered supaya 1 card terlihat proporsional. */
 .blog-grid.blog-grid-compact {
     grid-template-columns: repeat(auto-fit, minmax(290px, 360px));
     justify-content: center;

@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
 
   <style>
-    /* ── CSS Variables (sama persis dengan main.css) ── */
     :root {
       --c0: #080808;
       --c1: #0f0f0f;
@@ -48,7 +47,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Background sama dengan hero section ── */
     body {
       background:
         radial-gradient(ellipse 70% 55% at 65% 35%, rgba(201, 169, 110, 0.06) 0%, transparent 60%),
@@ -64,7 +62,6 @@
       text-align: center;
     }
 
-    /* ── Grid overlay sama dengan hero ── */
     body::before {
       content: '';
       position: fixed;
@@ -90,7 +87,6 @@
       to   { opacity: 1; transform: none; }
     }
 
-    /* ── 404 number ── */
     .err-number {
       font-family: var(--font-display);
       font-size: clamp(6rem, 20vw, 10rem);
@@ -99,7 +95,6 @@
       line-height: 1;
       color: transparent;
       -webkit-text-stroke: 1px rgba(255,255,255,0.08);
-      /* Gold accent di tengah */
       background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, var(--accent-gold) 50%, rgba(255,255,255,0.06) 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -108,7 +103,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* ── Section label sama dengan main.css ── */
     .section-label {
       font-size: 0.72rem;
       font-weight: 700;
@@ -118,7 +112,6 @@
       margin-bottom: 1rem;
     }
 
-    /* ── Title & desc sama dengan main.css ── */
     .err-title {
       font-family: var(--font-display);
       font-size: clamp(1.6rem, 4vw, 2.2rem);
@@ -136,7 +129,6 @@
       margin-bottom: 2.5rem;
     }
 
-    /* ── Divider tipis sama dengan gradient-divider ── */
     .err-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
@@ -144,7 +136,6 @@
       width: 100%;
     }
 
-    /* ── Buttons sama persis dengan main.css ── */
     .btn-actions {
       display: flex;
       gap: 1rem;
@@ -197,7 +188,6 @@
       background: rgba(255, 255, 255, 0.04);
     }
 
-    /* ── Nav logo kecil di atas ── */
     .err-nav {
       position: fixed;
       top: 0;
@@ -223,7 +213,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* ── Subtle glow di belakang angka ── */
     .err-glow {
       position: absolute;
       top: 50%;

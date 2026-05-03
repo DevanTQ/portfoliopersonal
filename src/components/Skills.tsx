@@ -137,7 +137,6 @@ const Skills = () => {
                   <canvas id={chartByDomain[tab.id].id} style={{ maxHeight: '280px' }}></canvas>
                 </div>
 
-                {/* Physics */}
                 {tab.id === 'physics' && (
                   <div className="skills-list-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <div>
@@ -161,7 +160,6 @@ const Skills = () => {
                   </div>
                 )}
 
-                {/* Cyber */}
                 {tab.id === 'cyber' && (
                   <div className="skills-list-card">
                     <div className="about-chart-title">Tools & Teknik</div>
@@ -181,7 +179,6 @@ const Skills = () => {
                   </div>
                 )}
 
-                {/* Design */}
                 {tab.id === 'design' && (
                   <div className="skills-list-card">
                     <div className="about-chart-title">Tools Desain & Editing</div>
@@ -201,7 +198,6 @@ const Skills = () => {
                   </div>
                 )}
 
-                {/* Web */}
                 {tab.id === 'web' && (
                   <div className="skills-list-card">
                     <div className="about-chart-title">Tech Stack</div>

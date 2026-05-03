@@ -229,6 +229,20 @@ setTimeout(() => {
 
   group.addEventListener("touchstart", function (e) {
     e.preventDefault();
-    if (isActive) { clearTimeout(leaveTimer); deactivate(); } else { activate(); }
+    if (!isActive) activate();
   }, { passive: false });
+
+  group.querySelectorAll(".sc-card").forEach((card) => {
+    card.addEventListener("touchend", function (e) {
+      e.preventDefault();
+      if (swapping || card.classList.contains("sc-center")) return;
+      const centerCard = group.querySelector(".sc-card.sc-center");
+      if (!centerCard) return;
+      swapping = true;
+      const clickedPos = card.classList.contains("sc-left") ? "sc-left" : "sc-right";
+      card.classList.remove(clickedPos); card.classList.add("sc-center"); card.style.zIndex = 10;
+      centerCard.classList.remove("sc-center"); centerCard.classList.add(clickedPos); centerCard.style.zIndex = 5;
+      setTimeout(() => { swapping = false; }, 520);
+    }, { passive: false });
+  });
 }, 500);

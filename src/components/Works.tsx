@@ -4,15 +4,6 @@ const filters = ['all', 'web', 'tools', 'ai', 'security']
 
 const works = [
   {
-    cat: 'ai',
-    gradient: 'work-gradient-1',
-    icon: 'fa-robot',
-    link: 'https://github.com/DevanTQ',
-    category: 'AI · Desktop',
-    title: 'AI Desktop Overlay App',
-    desc: 'Aplikasi desktop always-on-top bertenaga Groq AI. Screenshot, notes, kalkulator — bisa dipakai di atas game fullscreen sekalipun.',
-  },
-  {
     cat: 'web',
     gradient: 'work-gradient-2',
     icon: 'fa-user',

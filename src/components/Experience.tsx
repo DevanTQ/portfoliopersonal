@@ -18,10 +18,6 @@ const timelineItems = [
 ]
 
 const Experience = () => {
-  const handleCVDownload = () => {
-    window.open('https://drive.google.com/uc?export=download&id=ID_FILE_KAMU')
-  }
-
   return (
     <section id="experience" className="full">
       <div className="exp-inner">
@@ -30,10 +26,10 @@ const Experience = () => {
             <div className="section-label">Experience</div>
             <h2 className="section-title">Rekam Jejak</h2>
           </div>
-          <button className="btn-secondary" onClick={handleCVDownload} style={{ whiteSpace: 'nowrap' }}>
-            <i className="fa-solid fa-download"></i>
-            <span>Download CV</span>
-          </button>
+          <a href="https://github.com/DevanTQ" target="_blank" rel="noreferrer" className="btn-secondary" style={{ whiteSpace: 'nowrap' }}>
+            <i className="fa-brands fa-github"></i>
+            <span>Lihat GitHub</span>
+          </a>
         </div>
 
         <div className="timeline">

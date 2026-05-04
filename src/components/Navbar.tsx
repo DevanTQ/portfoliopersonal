@@ -23,7 +23,10 @@ const Navbar = () => {
     <>
       <nav id="navbar">
         <div className="nav-inner">
-          <a href="#hero" className="nav-logo">Devandra El Syadam</a>
+          <a href="#hero" className="nav-logo">
+            <span className="logo-full" style={{ fontWeight: 'inherit' }}>Devandra El Syadam</span>
+            <span className="logo-short" style={{ fontWeight: 'inherit' }}>Devandra</span>
+          </a>
 
           <ul className="nav-links">
             {navLinks.map((link) => (

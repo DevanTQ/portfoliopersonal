@@ -1,24 +1,6 @@
-import { useState } from 'react'
-
 const Hero = () => {
-  const [showToast, setShowToast] = useState(false)
-
-  const handleCVDownload = () => {
-    setShowToast(true)
-    window.open('https://drive.google.com/uc?export=download&id=ID_FILE_KAMU')
-  }
-
   return (
     <>
-      {showToast && (
-        <div className="cv-toast" id="cvToast">
-          <i className="fa-solid fa-circle-info cv-toast-icon"></i>
-          <div>
-            <strong style={{ display: 'block', marginBottom: '0.2rem' }}>Mengunduh CV...</strong>
-          </div>
-        </div>
-      )}
-
       <section id="hero" className="full">
         <div className="hero-bg"></div>
         <div className="hero-grid"></div>
@@ -43,10 +25,10 @@ const Hero = () => {
               <a href="#contact" className="btn-secondary">
                 <i className="fa-regular fa-envelope"></i> Hubungi Saya
               </a>
-              <button className="btn-cv" onClick={handleCVDownload}>
-                <i className="fa-solid fa-download"></i>
-                <span>Download CV</span>
-              </button>
+              <a href="#blog" className="btn-cv">
+                <i className="fa-solid fa-pen-nib"></i>
+                <span>Baca Blog</span>
+              </a>
             </div>
           </div>
 

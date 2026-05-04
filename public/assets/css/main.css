@@ -195,6 +195,14 @@ nav.scrolled {
     white-space: nowrap;
 }
 
+.nav-logo span {
+    font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -439,6 +447,7 @@ section.full {
     cursor: pointer;
     transition: background 0.2s, border-color 0.2s, transform 0.2s;
     font-family: var(--font-body);
+    text-decoration: none;
 }
 
 .btn-cv:hover {

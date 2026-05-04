@@ -130,11 +130,23 @@ const Skills = () => {
               id={`panel-${tab.id}`}
             >
               <div className="skills-grid" style={{ marginTop: 0 }}>
-                <div className="skills-chart-card">
-                  <div className="about-chart-title" style={{ marginBottom: '1.5rem' }}>
-                    {chartByDomain[tab.id].label}
+
+                {/* ── Chart card ── */}
+                <div className="skills-chart-scroll-wrap">
+                  <div className="skills-chart-card">
+                    <div className="about-chart-title" style={{ marginBottom: '1.5rem' }}>
+                      {chartByDomain[tab.id].label}
+                    </div>
+                    {/*
+                      PERBAIKAN: hapus minWidth:'320px' agar canvas tidak
+                      memaksa overflow horizontal di layar sempit.
+                      maxHeight tetap dibatasi; width dikontrol penuh oleh CSS.
+                    */}
+                    <canvas
+                      id={chartByDomain[tab.id].id}
+                      style={{ maxHeight: '320px' }}
+                    ></canvas>
                   </div>
-                  <canvas id={chartByDomain[tab.id].id} style={{ maxHeight: '280px' }}></canvas>
                 </div>
 
                 {tab.id === 'physics' && (
@@ -153,7 +165,7 @@ const Skills = () => {
                     <div>
                       <div className="about-chart-title">Pendekatan Ilmiah</div>
                       <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'var(--text-muted)', marginTop: '0.75rem' }}>
-                        Sebagai mahasiswa Fisika UIN Jakarta, saya mendekati setiap masalah dengan metode ilmiah — hipotesis,
+                        Sebagai mahasiswa <strong style={{ color: 'var(--text-secondary)' }}>Fisika UIN Jakarta</strong>, saya mendekati setiap masalah dengan metode ilmiah — hipotesis,
                         observasi, analisis. Pola pikir ini yang menghubungkan fisika dengan cybersecurity.
                       </p>
                     </div>
@@ -172,7 +184,7 @@ const Skills = () => {
                       ))}
                     </div>
                     <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', lineHeight: 1.7, marginTop: '1.25rem' }}>
-                      Aktif mengikuti CTF (Capture The Flag) internasional maupun nasional dan berbagai tantangan keamanan
+                      Aktif mengikuti <strong style={{ color: 'var(--text-secondary)' }}>CTF (Capture The Flag)</strong> internasional maupun nasional dan berbagai tantangan keamanan
                       siber — mencakup web exploitation, binary, digital forensics, dan OSINT. Pencapaian Terakhir Meraih
                       peringkat 59/697 pada Ramadan CTF 2026.
                     </p>

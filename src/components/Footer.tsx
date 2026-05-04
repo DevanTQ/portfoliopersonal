@@ -22,10 +22,6 @@ const socials = [
 ]
 
 const Footer = () => {
-  const handleCVDownload = () => {
-    window.open('https://drive.google.com/uc?export=download&id=ID_FILE_KAMU')
-  }
-
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
@@ -70,12 +66,8 @@ const Footer = () => {
             <div>
               <div className="footer-col-title">Lainnya</div>
               <ul className="footer-links">
-                <li>
-                  <a href="#" onClick={(e) => { e.preventDefault(); handleCVDownload() }}>
-                    <i className="fa-solid fa-download" style={{ fontSize: '0.7rem', marginRight: '0.3rem' }}></i>
-                    Download CV
-                  </a>
-                </li>
+                <li><a href="#blog"><i className="fa-solid fa-pen-nib" style={{ fontSize: '0.7rem', marginRight: '0.3rem' }}></i>Blog & Tulisan</a></li>
+                <li><a href="#about">Tentang Saya</a></li>
                 <li><a href="https://github.com/DevanTQ" target="_blank" rel="noreferrer">GitHub Repos</a></li>
                 <li><a href="https://devandraelsyadam.netlify.app" target="_blank" rel="noreferrer">Live Portfolio</a></li>
                 <li><a href="#contact">Hubungi Saya</a></li>

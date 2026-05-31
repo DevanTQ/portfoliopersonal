@@ -9,6 +9,7 @@ export default defineConfig({
       hostname: 'https://devandraelsyadam.netlify.app',
       exclude: ['/404'],
       dynamicRoutes: ['/'],
-    }),
+      generateRobotsTxt: false,
+    })
   ],
 })

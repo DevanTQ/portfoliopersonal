@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://devandraelsyadam.my.id/sitemap.xml
+Sitemap: https://devandraelsyadam.netlify.app/sitemap.xml

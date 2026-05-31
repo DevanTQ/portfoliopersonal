@@ -17,7 +17,7 @@ const navCol2 = [
 const socials = [
   { href: 'https://linkedin.com/in/devandraelsyadam', icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn' },
   { href: 'https://github.com/DevanTQ',               icon: 'fa-brands fa-github',      label: 'GitHub' },
-  { href: 'https://instagram.com/dvandr404',         icon: 'fa-brands fa-instagram',   label: 'Instagram' },
+  { href: 'https://instagram.com/dvnnaell',         icon: 'fa-brands fa-instagram',   label: 'Instagram' },
   { href: 'https://devandraelsyadam.netlify.app',     icon: 'fa-solid fa-globe',         label: 'Portfolio' },
 ]
 

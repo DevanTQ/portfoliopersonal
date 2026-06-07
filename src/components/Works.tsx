@@ -4,6 +4,15 @@ const filters = ['all', 'web', 'tools', 'ai', 'security']
 
 const works = [
   {
+    cat: 'ai',
+    gradient: 'work-gradient-1',
+    icon: 'fa-shield-halved',
+    link: 'https://developmentweb-service-185916174488.asia-southeast2.run.app',
+    category: 'AI · Legal Tech',
+    title: 'WitnessChain',
+    desc: 'AI-powered legal evidence documentation platform for human rights violation victims in Indonesia. Built with Next.js 14, Supabase, Gemini 2.5 Flash, and deployed on Google Cloud Run. Features SHA-256 evidence hashing, Legal Radar AI, Timeline Visualizer, and Google Maps legal aid referral.',
+  },
+  {
     cat: 'web',
     gradient: 'work-gradient-2',
     icon: 'fa-user',

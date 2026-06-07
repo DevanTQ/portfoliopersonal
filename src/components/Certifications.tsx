@@ -28,13 +28,6 @@ const certs = [
     year: 'February 2026',
   },
   {
-    href: 'https://drive.google.com/file/d/1vVINlGr9e7kAq_qXUywUcZzsH68jgn60/view?usp=sharing',
-    icon: 'fa-solid fa-flag',
-    name: 'Fetch The Flag CTF — Certificate of Completion',
-    issuer: 'Snyk · Rank 597 / 1539 Teams · 100 pts',
-    year: 'March 2026',
-  },
-  {
     href: 'https://drive.google.com/file/d/1I3RtWCYHj8H-0L1tnJltTUVeSu7ZhN2V/view?usp=sharing',
     icon: 'fa-solid fa-trophy',
     name: 'Ramadan CTF 2026 — Certificate of Participation',
@@ -42,7 +35,7 @@ const certs = [
     year: 'March 2026',
   },
   {
-    href: 'https://drive.google.com/file/d/1vVINlGr9e7kAq_qXUywUcZzsH68jgn60/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/16YdWf-Ac6cLSoBurqFE1W7QABYx8Rt1S/view?usp=sharing',
     icon: 'fa-solid fa-fire-flame-curved',
     name: 'Introduction to the Threat Landscape 3.0',
     issuer: 'Fortinet Training Institute',

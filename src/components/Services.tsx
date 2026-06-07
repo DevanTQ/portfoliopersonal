@@ -3,6 +3,7 @@ const serviceItems = [
   { icon: 'fa-magnifying-glass', title: 'Digital Forensics',    num: '02', desc: 'Digital artifact analysis, PCAP investigation, and evidence extraction from digital systems using Wireshark, Volatility, Autopsy, and FTK Imager.' },
   { icon: 'fa-shield-halved',    title: 'Security & CTF',       num: '03', desc: 'Web exploitation, binary pwn, and OSINT through international CTF competitions — including a rank of 59/702 in Ramadan CTF 2026.' },
   { icon: 'fa-palette',          title: 'Design & Editing',     num: '04', desc: 'Graphic design, video editing, and UI/UX with a three-year Visual Communication Design background — from visual identity and posters to aesthetic and functional web interfaces.' },
+  { icon: 'fa-gavel',            title: 'WitnessChain',         num: '05', desc: 'AI-powered legal evidence platform built with Next.js 14, Supabase, and Gemini 2.5 Flash on Google Cloud Run. Features SHA-256 hashing, Legal Radar AI, Timeline Visualizer, and Google Maps legal aid referral. Submitted to JuaraVibeCoding 2026 by Google.' },
   { icon: 'fa-brands fa-python', title: 'Python & Automation',  num: '06', desc: 'Scripting, automating repetitive tasks, and building tools — from web scrapers and QR generators to an AI-powered desktop application integrated with Groq.' },
 ]
 

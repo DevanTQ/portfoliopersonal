@@ -14,20 +14,20 @@ const Hero = () => {
               Physics Student & Technology Enthusiast
             </p>
             <p className="hero-desc reveal" style={{ transitionDelay: '0.2s' }}>
-              Mahasiswa Fisika UIN Jakarta yang melihat teknologi lewat lensa sains. Fokus pada eksplorasi Cybersecurity
-              dan Vulnerability Research, menggabungkan ketelitian logika dengan rasa penasaran untuk mengulik lebih dalam
-              suatu sistem.
+              A Physics student at UIN Jakarta who sees technology through the lens of science.
+              Focused on exploring Cybersecurity and Vulnerability Research — combining analytical
+              precision with a deep curiosity for understanding how systems really work.
             </p>
             <div className="hero-actions reveal" style={{ transitionDelay: '0.25s' }}>
               <a href="#works" className="btn-primary">
-                <i className="fa-solid fa-table-cells"></i> Lihat Karya
+                <i className="fa-solid fa-table-cells"></i> View Projects
               </a>
               <a href="#contact" className="btn-secondary">
-                <i className="fa-regular fa-envelope"></i> Hubungi Saya
+                <i className="fa-regular fa-envelope"></i> Contact Me
               </a>
               <a href="#blog" className="btn-cv">
                 <i className="fa-solid fa-pen-nib"></i>
-                <span>Baca Blog</span>
+                <span>Read Blog</span>
               </a>
             </div>
           </div>
@@ -45,11 +45,11 @@ const Hero = () => {
                     <div className="sc-perf sc-perf--v sc-perf--rgt"></div>
                     <div className="sc-year">2026</div>
                     <div className="sc-photo">
-                      <img src="/assets/images/devandra_photo_random.jpg" alt="Devandra El Syadam - Fisika & Sains" />
+                      <img src="/assets/images/devandra_photo_random.jpg" alt="Devandra El Syadam - Physics & Science" />
                     </div>
                     <div className="sc-footer">
                       <div className="sc-ornament">✦ ✦ ✦</div>
-                      <div className="sc-name">Fisika & Sains</div>
+                      <div className="sc-name">Physics & Science</div>
                       <div className="sc-title">UIN Jakarta · 2026</div>
                     </div>
                     <div className="sc-num">20</div>

@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
 type FormData = {
-  nama: string
+  name: string
   email: string
-  subjek: string
-  pesan: string
+  subject: string
+  message: string
 }
 
 const contactItems = [
-  { icon: 'fa-regular fa-envelope',  label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
-  { icon: 'fa-solid fa-location-dot', label: 'Lokasi',       val: 'Tangerang Selatan, Banten, Indonesia' },
-  { icon: 'fa-solid fa-clock',        label: 'Response Time', val: 'Dalam 24 jam kerja' },
+  { icon: 'fa-regular fa-envelope',   label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
+  { icon: 'fa-solid fa-location-dot', label: 'Location',      val: 'Tangerang Selatan, Banten, Indonesia' },
+  { icon: 'fa-solid fa-clock',        label: 'Response Time', val: 'Within 24 business hours' },
 ]
 
 const socials = [
@@ -22,7 +22,7 @@ const socials = [
 
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
-    nama: '', email: '', subjek: '', pesan: '',
+    name: '', email: '', subject: '', message: '',
   })
 
   const handleChange = (
@@ -47,13 +47,13 @@ const Contact = () => {
       })
 
       if (res.ok) {
-        setFormData({ nama: '', email: '', subjek: '', pesan: '' })
-        alert('Pesan terkirim!')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        alert('Message sent!')
       } else {
-        alert('Gagal mengirim pesan. Coba lagi.')
+        alert('Failed to send message. Please try again.')
       }
     } catch {
-      alert('Terjadi kesalahan. Coba lagi.')
+      alert('Something went wrong. Please try again.')
     }
   }
 
@@ -63,10 +63,10 @@ const Contact = () => {
 
         <div className="contact-info reveal-left">
           <div className="section-label">Contact</div>
-          <h2 className="section-title">Mari Berkolaborasi</h2>
+          <h2 className="section-title">Let's Collaborate</h2>
           <p className="section-desc" style={{ marginBottom: 0 }}>
-            Punya proyek menarik, pertanyaan, atau sekadar ingin berbincang tentang teknologi dan sains?
-            Saya selalu terbuka untuk diskusi.
+            Have an interesting project, a question, or just want to talk about technology and science?
+            I'm always open for a good discussion.
           </p>
 
           <div className="contact-items">
@@ -102,13 +102,13 @@ const Contact = () => {
 
             <div className="form-row">
               <div className="form-group">
-                <label className="form-label">Nama</label>
+                <label className="form-label">Name</label>
                 <input
                   type="text"
-                  name="nama"
+                  name="name"
                   className="form-input"
-                  placeholder="Nama Anda"
-                  value={formData.nama}
+                  placeholder="Your name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
@@ -128,31 +128,31 @@ const Contact = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Subjek</label>
+              <label className="form-label">Subject</label>
               <input
                 type="text"
-                name="subjek"
+                name="subject"
                 className="form-input"
-                placeholder="Topik diskusi..."
-                value={formData.subjek}
+                placeholder="What's this about..."
+                value={formData.subject}
                 onChange={handleChange}
               />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Pesan</label>
+              <label className="form-label">Message</label>
               <textarea
-                name="pesan"
+                name="message"
                 className="form-textarea"
-                placeholder="Ceritakan tentang proyek atau pertanyaan Anda..."
-                value={formData.pesan}
+                placeholder="Tell me about your project or question..."
+                value={formData.message}
                 onChange={handleChange}
                 required
               />
             </div>
 
             <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start' }}>
-              <i className="fa-solid fa-paper-plane"></i> Kirim Pesan
+              <i className="fa-solid fa-paper-plane"></i> Send Message
             </button>
           </form>
         </div>

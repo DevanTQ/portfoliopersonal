@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react'
 
 const tabs = [
-  { id: 'physics', icon: 'fa-atom',          label: 'Fisika & Sains' },
+  { id: 'physics', icon: 'fa-atom',          label: 'Physics & Science' },
   { id: 'cyber',   icon: 'fa-shield-halved', label: 'Cyber & Forensics' },
-  { id: 'design',  icon: 'fa-palette',       label: 'Desain & Kreatif' },
+  { id: 'design',  icon: 'fa-palette',       label: 'Design & Creative' },
   { id: 'web',     icon: 'fa-globe',         label: 'Web & Tools' },
 ]
 
 const toolsByDomain: Record<string, { icon: string; label: string }[]> = {
   physics: [
-    { icon: 'fa-atom',            label: 'Mekanika Klasik' },
-    { icon: 'fa-wave-square',     label: 'Fisika Gelombang' },
-    { icon: 'fa-calculator',      label: 'Kalkulus & Matematika Fisika' },
-    { icon: 'fa-chart-line',      label: 'Analisis Data Eksperimen' },
-    { icon: 'fa-flask',           label: 'Fisika Laboratorium' },
-    { icon: 'fa-brands fa-python', label: 'Python untuk Sains' },
+    { icon: 'fa-atom',            label: 'Classical Mechanics' },
+    { icon: 'fa-wave-square',     label: 'Wave Physics' },
+    { icon: 'fa-calculator',      label: 'Calculus & Mathematical Physics' },
+    { icon: 'fa-chart-line',      label: 'Experimental Data Analysis' },
+    { icon: 'fa-flask',           label: 'Physics Laboratory' },
+    { icon: 'fa-brands fa-python', label: 'Python for Science' },
     { icon: 'fa-diagram-project', label: 'Scientific Thinking' },
     { icon: 'fa-subscript',       label: 'LaTeX' },
   ],
@@ -38,7 +38,7 @@ const toolsByDomain: Record<string, { icon: string; label: string }[]> = {
     { icon: 'fa-film',         label: 'Adobe Premiere Pro' },
     { icon: 'fa-star',         label: 'Canva' },
     { icon: 'fa-layer-group',  label: 'Figma' },
-    { icon: 'fa-palette',      label: 'Desain Grafis' },
+    { icon: 'fa-palette',      label: 'Graphic Design' },
     { icon: 'fa-scissors',     label: 'Video Editing' },
     { icon: 'fa-eye',          label: 'UI/UX Principles' },
     { icon: 'fa-font',         label: 'Typography' },
@@ -61,9 +61,9 @@ const toolsByDomain: Record<string, { icon: string; label: string }[]> = {
 }
 
 const chartByDomain: Record<string, { id: string; label: string }> = {
-  physics: { id: 'radarChart',    label: 'Proficiency Radar — Sains & Komputasi' },
+  physics: { id: 'radarChart',    label: 'Proficiency Radar — Science & Computing' },
   cyber:   { id: 'platformChart', label: 'Proficiency — Cyber & Forensics' },
-  design:  { id: 'donutChart',    label: 'Skill Distribution — Desain' },
+  design:  { id: 'donutChart',    label: 'Skill Distribution — Design' },
   web:     { id: 'lineChart',     label: 'Skill Growth — Web & Programming' },
 }
 
@@ -104,10 +104,10 @@ const Skills = () => {
     <section id="skills" className="full">
       <div className="skills-inner">
         <div className="section-label reveal">Skills & Tools</div>
-        <h2 className="section-title reveal">Keahlian & Domain</h2>
+        <h2 className="section-title reveal">Skills & Domains</h2>
         <p className="section-desc reveal">
-          Empat domain yang saya tekuni — sains, keamanan digital, desain, dan teknologi.
-          Bukan spesialisasi sempit, tapi kombinasi yang saling melengkapi.
+          Four domains I actively develop — science, digital security, design, and technology.
+          Not narrow specializations, but a combination that complements each other.
         </p>
 
         <div className="domain-tabs reveal" style={{ marginTop: '3rem' }}>
@@ -138,9 +138,8 @@ const Skills = () => {
                       {chartByDomain[tab.id].label}
                     </div>
                     {/*
-                      PERBAIKAN: hapus minWidth:'320px' agar canvas tidak
-                      memaksa overflow horizontal di layar sempit.
-                      maxHeight tetap dibatasi; width dikontrol penuh oleh CSS.
+                      Canvas width is fully controlled by CSS.
+                      maxHeight is capped to prevent overflow on narrow screens.
                     */}
                     <canvas
                       id={chartByDomain[tab.id].id}
@@ -152,7 +151,7 @@ const Skills = () => {
                 {tab.id === 'physics' && (
                   <div className="skills-list-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <div>
-                      <div className="about-chart-title">Bidang yang Dipelajari</div>
+                      <div className="about-chart-title">Areas of Study</div>
                       <div className="tool-tags" style={{ marginTop: '1rem' }}>
                         {toolsByDomain['physics'].map((tool) => (
                           <span className="tool-tag" key={tool.label}>
@@ -163,10 +162,10 @@ const Skills = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="about-chart-title">Pendekatan Ilmiah</div>
+                      <div className="about-chart-title">Scientific Approach</div>
                       <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'var(--text-muted)', marginTop: '0.75rem' }}>
-                        Sebagai mahasiswa <strong style={{ color: 'var(--text-secondary)' }}>Fisika UIN Jakarta</strong>, saya mendekati setiap masalah dengan metode ilmiah — hipotesis,
-                        observasi, analisis. Pola pikir ini yang menghubungkan fisika dengan cybersecurity.
+                        As a <strong style={{ color: 'var(--text-secondary)' }}>Physics student at UIN Jakarta</strong>, I approach every problem using the scientific method — hypothesis,
+                        observation, analysis. This mindset is what connects physics with cybersecurity.
                       </p>
                     </div>
                   </div>
@@ -174,7 +173,7 @@ const Skills = () => {
 
                 {tab.id === 'cyber' && (
                   <div className="skills-list-card">
-                    <div className="about-chart-title">Tools & Teknik</div>
+                    <div className="about-chart-title">Tools & Techniques</div>
                     <div className="tool-tags" style={{ marginTop: '1rem' }}>
                       {toolsByDomain['cyber'].map((tool) => (
                         <span className="tool-tag" key={tool.label}>
@@ -184,16 +183,15 @@ const Skills = () => {
                       ))}
                     </div>
                     <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', lineHeight: 1.7, marginTop: '1.25rem' }}>
-                      Aktif mengikuti <strong style={{ color: 'var(--text-secondary)' }}>CTF (Capture The Flag)</strong> internasional maupun nasional dan berbagai tantangan keamanan
-                      siber — mencakup web exploitation, binary, digital forensics, dan OSINT. Pencapaian Terakhir Meraih
-                      peringkat 59/697 pada Ramadan CTF 2026.
+                      Actively competing in <strong style={{ color: 'var(--text-secondary)' }}>CTF (Capture The Flag)</strong> competitions both internationally and nationally,
+                      covering web exploitation, binary pwn, digital forensics, and OSINT. Latest achievement: ranked 59/702 in Ramadan CTF 2026.
                     </p>
                   </div>
                 )}
 
                 {tab.id === 'design' && (
                   <div className="skills-list-card">
-                    <div className="about-chart-title">Tools Desain & Editing</div>
+                    <div className="about-chart-title">Design & Editing Tools</div>
                     <div className="tool-tags" style={{ marginTop: '1rem' }}>
                       {toolsByDomain['design'].map((tool) => (
                         <span className="tool-tag" key={tool.label}>
@@ -203,9 +201,9 @@ const Skills = () => {
                       ))}
                     </div>
                     <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', lineHeight: 1.7, marginTop: '1.25rem' }}>
-                      Latar belakang <strong style={{ color: 'var(--text-secondary)' }}>Desain Komunikasi Visual</strong> di
-                      SMKS Sasmita Jaya 1 selama 3 tahun membangun kepekaan visual, komposisi, dan kemampuan bercerita lewat
-                      gambar — fondasi yang memperkuat desain UI web sampai forensics report.
+                      Three years of <strong style={{ color: 'var(--text-secondary)' }}>Visual Communication Design</strong> at
+                      SMKS Sasmita Jaya 1 built a strong foundation in visual sensitivity, composition, and visual storytelling —
+                      skills that carry over into web UI design and forensics reporting.
                     </p>
                   </div>
                 )}

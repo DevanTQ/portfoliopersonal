@@ -1,17 +1,17 @@
 const About = () => {
   const skillBars = [
-    { label: 'Cybersecurity Fundamentals', pct: 78 },
-    { label: 'Digital Forensics',          pct: 76 },
-    { label: 'Networking',                 pct: 80 },
-    { label: 'Linux & System',             pct: 82 },
-    { label: 'Visual Design (DKV)',        pct: 83 },
+    { label: 'Cybersecurity Fundamentals', pct: 65 },
+    { label: 'Digital Forensics',          pct: 63 },
+    { label: 'Networking',                 pct: 68 },
+    { label: 'Linux & System',             pct: 70 },
+    { label: 'Visual Design (DKV)',        pct: 80 },
   ]
 
   const highlights = [
-    { icon: 'fa-atom',             title: 'Ilmiah & Analitis',  desc: 'Pendekatan berbasis logika dan metode ilmiah dalam setiap pemecahan masalah.' },
-    { icon: 'fa-seedling',         title: 'Terus Belajar',      desc: 'Belajar mandiri, eksperimen, dan adaptasi adalah bagian dari rutinitas harian saya.' },
-    { icon: 'fa-compass-drafting', title: 'Kreatif & Teknis',   desc: 'Latar DKV memberi kepekaan visual yang melengkapi kemampuan teknis saya.' },
-    { icon: 'fa-hammer',           title: 'Builder Mindset',    desc: 'Saya senang membangun sesuatu — dari website, tools, hingga ide yang jadi produk nyata.' },
+    { icon: 'fa-atom',             title: 'Scientific & Analytical',  desc: 'Approaching every problem with logic and scientific methods as the foundation.' },
+    { icon: 'fa-seedling',         title: 'Continuous Learner',       desc: 'Self-study, experimentation, and adaptation are a core part of my daily routine.' },
+    { icon: 'fa-compass-drafting', title: 'Creative & Technical',     desc: 'A design background gives me visual sensitivity that complements my technical skills.' },
+    { icon: 'fa-hammer',           title: 'Builder Mindset',          desc: 'I enjoy building things — from websites and tools to ideas that become real products.' },
   ]
 
   return (
@@ -22,19 +22,18 @@ const About = () => {
           <div className="section-label">About Me</div>
           <h2 className="section-title">Curiosity-Driven, Science-Backed</h2>
           <p>
-            Perkenalkan Saya <strong>Devandra El Syadam</strong>, mahasiswa Fisika UIN Jakarta yang mengawali perjalanan
-            dari dunia desain di SMK Sasmita Jaya 1. Mungkin terlihat jauh, tapi buat saya, Desain, Fisika, dan Teknologi itu satu
-            paket: semuanya soal memahami pola dan memecahkan masalah.
+            I'm <strong>Devandra El Syadam</strong>, a Physics student at UIN Jakarta who started out in the world of design at SMKS Sasmita Jaya 1.
+            It might seem like an unusual path, but to me, Design, Physics, and Technology are one package — all about understanding patterns and solving problems.
           </p>
           <p>
-            Saat ini, saya lebih banyak menghabiskan waktu di laboratorium dan di depan layar—menggabungkan
-            <strong>logika sains</strong> dengan dunia <strong>cybersecurity</strong>. Bagi saya, setiap baris kode dan
-            celah keamanan adalah eksperimen yang butuh ketelitian tinggi.
+            These days, I spend most of my time between lectures and the screen, combining
+            <strong> scientific logic</strong> with the world of <strong>cybersecurity</strong>.
+            Every line of code and every security vulnerability is an experiment that demands precision.
           </p>
           <p>
-            Di luar jam kuliah, saya aktif mengasah <em>problem-solving</em> melalui platform CTF (Capture The Flag) dan
-            berbagai tantangan keamanan siber, khususnya pada analisis log, jejak digital, dan investigasi forensik
-            untuk memahami serta mengamankan sistem digital.
+            Outside of class, I actively sharpen my <em>problem-solving</em> through CTF (Capture The Flag) platforms and
+            various cybersecurity challenges, particularly in log analysis, digital trails, and forensic investigation
+            to understand and secure digital systems.
           </p>
 
           <div className="about-highlights" style={{ marginTop: '2rem' }}>
@@ -50,7 +49,7 @@ const About = () => {
 
         <div className="about-visual-wrap reveal-right">
           <div className="about-chart-card">
-            <div className="about-chart-title">Kompetensi Inti</div>
+            <div className="about-chart-title">Core Competencies</div>
             {skillBars.map((bar) => (
               <div className="skill-bar-item" key={bar.label}>
                 <div className="skill-bar-label">

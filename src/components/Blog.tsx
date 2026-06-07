@@ -28,7 +28,7 @@ const Blog = () => {
           title: entry.title,
           excerpt:
             entry.content?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." || "",
-          date: new Date(entry.published).toLocaleDateString("id-ID", {
+          date: new Date(entry.published).toLocaleDateString("en-US", {
             month: "short",
             year: "numeric",
           }),
@@ -46,22 +46,22 @@ const Blog = () => {
     <section id="blog" className="full">
       <div className="blog-inner">
         <div className="section-label reveal">Blog & Writing</div>
-        <h2 className="section-title reveal">Tulisan Terbaru</h2>
+        <h2 className="section-title reveal">Latest Posts</h2>
         <p className="section-desc reveal">
-          Catatan, pemikiran, dan eksplorasi tentang sains, teknologi, dan
-          hal-hal yang sedang saya pelajari.
+          Notes, thoughts, and explorations on science, technology, and
+          things I'm currently learning.
         </p>
 
         {loading ? (
           <div className="blog-empty reveal">
             <i className="fa-solid fa-spinner fa-spin"></i>
-            <p>Memuat tulisan...</p>
+            <p>Loading posts...</p>
           </div>
         ) : blogPosts.length === 0 ? (
           <div className="blog-empty reveal">
             <i className="fa-solid fa-pen-to-square"></i>
-            <p>Belum ada tulisan untuk sekarang.</p>
-            <span>Nantikan tulisan pertama saya!</span>
+            <p>No posts yet.</p>
+            <span>Stay tuned for my first article!</span>
           </div>
         ) : (
           <>
@@ -86,7 +86,7 @@ const Blog = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Baca <i className="fa-solid fa-arrow-right"></i>
+                        Read <i className="fa-solid fa-arrow-right"></i>
                       </a>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ const Blog = () => {
                   rel="noopener noreferrer"
                   className="btn-secondary"
                 >
-                  Semua Tulisan{" "}
+                  All Posts{" "}
                   <i
                     className="fa-solid fa-arrow-right"
                     style={{ marginLeft: "0.25rem" }}

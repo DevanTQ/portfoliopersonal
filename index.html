@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+  <link rel="manifest" href="/manifest.json" />
   <title>Devandra El Syadam | Portfolio</title>
   <meta name="msvalidate.01" content="DBF7D459C052078BFD36717D556C2084" />
   <meta name="google-site-verification" content="3reMB1wCsIRoaWZrkkB_-StWryBDydFUJLwdVx6AD2M" />
@@ -45,7 +46,7 @@
     "@type": "Person",
     "name": "Devandra El Syadam",
     "jobTitle": "Aspiring Digital Forensics Analyst & Physics Student",
-    "description": "Physics student with a passion for cybersecurity and digital forensics. Certified by Cisco in Introduction to Cybersecurity. Builder of WitnessChain, an AI-powered legal evidence platform.",
+    "description": "Physics student at UIN Syarif Hidayatullah Jakarta with a strong passion for cybersecurity and digital forensics. Holds certifications from Cisco, Fortinet, and Dicoding. Active CTF competitor and builder of WitnessChain, an AI-powered legal evidence documentation platform.",
     "url": "https://devandraelsyadam.netlify.app",
     "image": "https://devandraelsyadam.netlify.app/og-desk.jpg",
     "email": "devandraelsyadam1@gmail.com",
@@ -77,6 +78,7 @@
         "@type": "EducationalOccupationalCredential",
         "name": "Introduction to Cybersecurity",
         "credentialCategory": "Certification",
+        "dateCreated": "2026-02-26",
         "recognizedBy": {
           "@type": "Organization",
           "name": "Cisco Networking Academy"
@@ -84,8 +86,19 @@
       },
       {
         "@type": "EducationalOccupationalCredential",
-        "name": "Belajar Dasar AI",
+        "name": "Introduction to the Threat Landscape 3.0",
         "credentialCategory": "Certification",
+        "dateCreated": "2026-06-01",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Fortinet Training Institute"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "AI Fundamentals",
+        "credentialCategory": "Certification",
+        "dateCreated": "2025-09-28",
         "recognizedBy": {
           "@type": "Organization",
           "name": "Dicoding Indonesia"
@@ -93,11 +106,42 @@
       },
       {
         "@type": "EducationalOccupationalCredential",
-        "name": "Belajar Dasar Cloud dan Gen AI di AWS",
+        "name": "Cloud and Generative AI Fundamentals on AWS",
         "credentialCategory": "Certification",
+        "dateCreated": "2025-10-28",
         "recognizedBy": {
           "@type": "Organization",
           "name": "Dicoding Indonesia"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Classical Cryptography for Beginner",
+        "credentialCategory": "Course Completion",
+        "dateCreated": "2026-01-24",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Cyber Army Indonesia"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Fetch The Flag CTF — Certificate of Completion",
+        "credentialCategory": "CTF Competition",
+        "description": "Ranked 597 out of 1539 teams, scored 100 points, completed 1 out of 22 challenges.",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Snyk"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Ramadan CTF 2026 — Certificate of Participation",
+        "credentialCategory": "CTF Competition",
+        "description": "Ranked 59 out of 702 teams, scored 665 points under the handle r4z0r0x.",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "VulnByDefault"
         }
       }
     ],
@@ -107,10 +151,14 @@
       "Web Development",
       "Physics",
       "CTF",
+      "Cryptography",
       "Python",
       "Cloud Computing",
       "Artificial Intelligence",
-      "Google Cloud Platform"
+      "Google Cloud Platform",
+      "Amazon Web Services",
+      "Network Security",
+      "Threat Analysis"
     ]
   }
   </script>
@@ -126,10 +174,10 @@
 
 <body>
   <form name="contact" data-netlify="true" hidden>
-    <input type="text" name="nama" />
+    <input type="text" name="name" />
     <input type="email" name="email" />
-    <input type="text" name="subjek" />
-    <textarea name="pesan"></textarea>
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
   </form>
   <div id="root"></div>
   <script src="/assets/js/chart.umd.min.js"></script>

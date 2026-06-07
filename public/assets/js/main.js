@@ -83,10 +83,10 @@ window.initChart = function(domain) {
     new Chart(document.getElementById("radarChart"), {
       type: "radar",
       data: {
-        labels: ["Matematika Fisika","Komputasi Sains","Analisis Data","Scientific Writing","Lab Skills","Python Sains"],
+        labels: ["Mathematical Physics","Scientific Computing","Data Analysis","Scientific Writing","Lab Skills","Python for Science"],
         datasets: [{
           label: "Proficiency",
-          data: [72, 70, 68, 65, 60, 75],
+          data: [60, 58, 55, 52, 50, 63],
           fill: true,
           backgroundColor: "rgba(201,169,110,0.1)",
           borderColor: "rgba(201,169,110,0.75)",
@@ -117,7 +117,7 @@ window.initChart = function(domain) {
       data: {
         labels: ["Web Exploitation","Digital Forensics","OSINT","Binary Pwn","Malware Analysis","Linux/Bash"],
         datasets: [{
-          data: [82, 78, 80, 65, 70, 85],
+          data: [65, 68, 70, 45, 50, 72],
           backgroundColor: "rgba(201,169,110,0.12)",
           borderColor: "rgba(201,169,110,0.7)",
           borderWidth: 1.5,
@@ -139,9 +139,9 @@ window.initChart = function(domain) {
     new Chart(document.getElementById("donutChart"), {
       type: "doughnut",
       data: {
-        labels: ["Desain Grafis","Video Editing","UI/UX","Branding","Typography"],
+        labels: ["Graphic Design","Video Editing","UI/UX","Branding","Typography"],
         datasets: [{
-          data: [35, 25, 20, 12, 8],
+          data: [32, 24, 20, 14, 10],
           backgroundColor: [
             "rgba(201,169,110,0.85)","rgba(232,232,232,0.6)",
             "rgba(160,130,80,0.8)","rgba(90,90,90,0.75)","rgba(50,50,50,0.85)",
@@ -164,9 +164,9 @@ window.initChart = function(domain) {
       data: {
         labels: ["2023","2024","2025","2026"],
         datasets: [
-          { label: "HTML/CSS/JS", data: [40,65,78,88], borderColor: "rgba(201,169,110,0.9)", backgroundColor: "rgba(201,169,110,0.07)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
-          { label: "Python", data: [20,45,68,75], borderColor: "rgba(232,232,232,0.7)", backgroundColor: "rgba(232,232,232,0.04)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
-          { label: "SEO & Perf", data: [0,20,70,88], borderColor: "rgba(160,130,80,0.9)", backgroundColor: "rgba(160,130,80,0.05)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
+          { label: "HTML/CSS/JS", data: [35,58,72,80], borderColor: "rgba(201,169,110,0.9)", backgroundColor: "rgba(201,169,110,0.07)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
+          { label: "Python", data: [15,38,60,70], borderColor: "rgba(232,232,232,0.7)", backgroundColor: "rgba(232,232,232,0.04)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
+          { label: "SEO & Performance", data: [0,15,55,72], borderColor: "rgba(160,130,80,0.9)", backgroundColor: "rgba(160,130,80,0.05)", fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3 },
         ],
       },
       options: {

@@ -10,7 +10,7 @@ const works = [
     link: 'https://devandraelsyadam.netlify.app',
     category: 'Web · Portfolio',
     title: 'Portfolio Site v1',
-    desc: 'Portfolio berperforma tinggi dengan GTmetrix Grade A (92%). Full SEO, self-hosted fonts, WebP, dan terindex Search Console.',
+    desc: 'High-performance portfolio with GTmetrix Grade A (92%). Full SEO, self-hosted fonts, WebP images, and indexed on Search Console.',
   },
   {
     cat: 'web',
@@ -19,7 +19,7 @@ const works = [
     link: 'https://kenangan-dotpainting.netlify.app/',
     category: 'Web · Creative',
     title: 'Digital Diary — Workshop Event',
-    desc: 'Web diary dokumentasi event dot painting workshop dengan copy protection, folder hierarchy, dan photo frame profil.',
+    desc: 'Web diary documenting a dot painting workshop event, featuring copy protection, folder hierarchy, and profile photo frame.',
   },
 ]
 
@@ -44,9 +44,9 @@ const Works = () => {
     <section id="works" className="full">
       <div className="works-inner">
         <div className="section-label reveal">Portfolio</div>
-        <h2 className="section-title reveal">Proyek Pilihan</h2>
+        <h2 className="section-title reveal">Selected Projects</h2>
         <p className="section-desc reveal">
-          Koleksi proyek yang telah saya bangun — dari tools, web apps, hingga eksperimen teknologi.
+          A collection of projects I've built — from tools and web apps to technology experiments.
         </p>
 
         <div className="works-filter reveal">
@@ -90,7 +90,7 @@ const Works = () => {
 
         <div style={{ textAlign: 'center', marginTop: '3rem' }} className="reveal">
           <a href="https://github.com/DevanTQ" target="_blank" rel="noreferrer" className="btn-secondary">
-            Semua di GitHub <i className="fa-brands fa-github" style={{ marginLeft: '0.25rem' }}></i>
+            View All on GitHub <i className="fa-brands fa-github" style={{ marginLeft: '0.25rem' }}></i>
           </a>
         </div>
       </div>

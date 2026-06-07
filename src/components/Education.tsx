@@ -2,25 +2,25 @@ const eduItems = [
   {
     icon: 'fa-compass-drafting',
     period: '2023 – 2026',
-    degree: 'SMK — Desain Komunikasi Visual',
+    degree: 'Vocational High School — Visual Communication Design',
     school: 'SMKS Sasmita Jaya 1 Pamulang — Tangerang Selatan',
-    desc: 'Mendalami Desain Komunikasi Visual selama 3 tahun. Membangun kepekaan visual, kemampuan desain grafis, dan pemahaman komunikasi berbasis visual.',
-    tags: ['Passed'],
+    desc: 'Spent three years studying Visual Communication Design, building a strong foundation in graphic design, visual storytelling, and design-based communication.',
+    tags: ['Graduated'],
   },
   {
     icon: 'fa-atom',
-    period: '2026 – Sekarang',
-    degree: 'S1 Fisika — Mahasiswa Aktif',
-    school: 'UIN Syarif Hidayatullah Jakarta — Fakultas Sains dan Teknologi',
-    desc: 'Diterima melalui jalur SNBP 2026. Menekuni fisika sebagai fondasi ilmiah sambil terus mengembangkan kemampuan teknologi dan komputasi.',
-    tags: ['SNBP 2026', 'Aktif'],
+    period: '2026 – Present',
+    degree: 'Bachelor of Physics — Active Student',
+    school: 'UIN Syarif Hidayatullah Jakarta — Faculty of Science and Technology',
+    desc: 'Currently pursuing a Physics degree with a focus on building scientific and analytical thinking, while continuously expanding skills in technology and scientific computing.',
+    tags: ['2026', 'Active'],
   },
   {
     icon: 'fa-laptop-code',
-    period: '2023 – Sekarang',
+    period: '2023 – Present',
     degree: 'Self-Learning — Tech & Cybersecurity',
-    school: 'Online / Mandiri — TryHackMe, freeCodeCamp, Cisco',
-    desc: 'Belajar mandiri secara konsisten di bidang web development, keamanan digital, Python, dan forensics. Didukung platform online dan praktik langsung melalui CTF.',
+    school: 'Online — TryHackMe, freeCodeCamp, Cisco, Fortinet',
+    desc: 'Consistently self-studying web development, digital security, Python, and digital forensics through online platforms and hands-on practice via CTF competitions.',
     tags: [],
   },
 ]
@@ -30,9 +30,9 @@ const Education = () => {
     <section id="education" className="full">
       <div className="edu-inner">
         <div className="section-label reveal">Education</div>
-        <h2 className="section-title reveal">Latar Belakang Pendidikan</h2>
+        <h2 className="section-title reveal">Academic Background</h2>
         <p className="section-desc reveal" style={{ marginBottom: '3rem' }}>
-          Perjalanan akademik yang membentuk cara saya berpikir — dari seni visual hingga ilmu eksakta.
+          An academic journey that shapes the way I think — from visual arts to exact sciences.
         </p>
 
         <div className="edu-grid">

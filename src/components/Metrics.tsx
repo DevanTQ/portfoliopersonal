@@ -4,22 +4,22 @@ const principles = [
   {
     icon: 'fa-atom',
     title: 'Scientific Thinking',
-    desc: 'Setiap masalah didekati dengan logika ilmiah — hipotesis, eksperimen, dan evaluasi hasil.',
+    desc: 'Every problem is approached with scientific logic — hypothesis, experimentation, and evaluation of results.',
   },
   {
     icon: 'fa-arrows-spin',
     title: 'Iterative Learning',
-    desc: 'Belajar dari kesalahan, iterasi cepat, dan terus memperbaiki adalah cara saya bertumbuh.',
+    desc: 'Learning from mistakes, iterating fast, and continuously improving is how I grow.',
   },
   {
     icon: 'fa-code',
     title: 'Build to Learn',
-    desc: 'Saya belajar dengan cara terbaik: membangun sesuatu yang nyata dan menyelesaikan masalah riil.',
+    desc: 'I learn best by building real things and solving actual problems from start to finish.',
   },
   {
     icon: 'fa-magnifying-glass',
     title: 'Curiosity-Driven',
-    desc: 'Rasa ingin tahu adalah mesin terbesar di balik setiap proyek dan pencapaian yang saya raih.',
+    desc: 'Curiosity is the biggest engine behind every project and milestone I have achieved.',
   },
 ]
 
@@ -36,7 +36,7 @@ const Metrics = () => {
             data: {
               labels: ['2023', '2024', '2025', '2026'],
               datasets: [{
-                label: 'Proyek',
+                label: 'Projects',
                 data: [1, 1.3, 3.6, 4.3],
                 backgroundColor: 'rgba(201,169,110,0.18)',
                 borderColor: 'rgba(201,169,110,0.85)',
@@ -68,20 +68,20 @@ const Metrics = () => {
               datasets: [
                 {
                   label: 'Cybersecurity',
-                  data: [20, 50, 72, 80],
+                  data: [15, 40, 62, 72],
                   borderColor: 'rgba(201,169,110,0.9)',
                   backgroundColor: 'rgba(201,169,110,0.07)',
                   fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3,
                 },
                 {
                   label: 'Web Dev',
-                  data: [30, 55, 70, 85],
+                  data: [25, 48, 65, 78],
                   borderColor: 'rgba(232,232,232,0.7)',
                   backgroundColor: 'rgba(232,232,232,0.04)',
                   fill: true, tension: 0.4, borderWidth: 2, pointRadius: 3,
                 },
                 {
-                  label: 'Desain',
+                  label: 'Design',
                   data: [60, 68, 75, 80],
                   borderColor: 'rgba(160,130,80,0.9)',
                   backgroundColor: 'rgba(160,130,80,0.05)',
@@ -111,9 +111,9 @@ const Metrics = () => {
     <section id="metrics" className="full">
       <div className="metrics-inner">
         <div className="section-label reveal" style={{ textAlign: 'center' }}>Growth & Insights</div>
-        <h2 className="section-title reveal" style={{ textAlign: 'center' }}>Perjalanan & Perkembangan</h2>
+        <h2 className="section-title reveal" style={{ textAlign: 'center' }}>Journey & Growth</h2>
         <p className="section-desc reveal" style={{ textAlign: 'center', margin: '0 auto 3rem' }}>
-          Visualisasi pertumbuhan skill, volume proyek, dan komposisi keahlian dari waktu ke waktu.
+          A visualization of skill growth, project volume, and expertise composition over time.
         </p>
 
         <div className="growth-charts-grid reveal">

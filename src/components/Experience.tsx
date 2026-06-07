@@ -1,18 +1,18 @@
 const timelineItems = [
   {
-    period: 'Februari 2026 – Maret 2026',
+    period: 'February 2026 – March 2026',
     type: 'Participant (Completed)',
     role: 'Individual Participant — Ramadan CTF 2026',
-    company: 'VulnByDefault (VBD) — Remote, Internasional',
-    desc: 'Berhasil menempati peringkat 59 dari 697 tim internasional dalam Ramadan CTF 2026 dengan menuntaskan berbagai tantangan kompleks, mulai dari eksploitasi Web (NoSQL injection & prototype pollution), analisis Kernel Pwn (heap leak), hingga investigasi forensik dan OSINT berbasis koordinat presisi.',
+    company: 'VulnByDefault (VBD) — Remote, International',
+    desc: 'Ranked 59 out of 702 international teams in Ramadan CTF 2026, completing a range of complex challenges including Web Exploitation (NoSQL injection & prototype pollution), Kernel Pwn analysis (heap leak), and forensic investigation with precision-coordinate OSINT.',
     tags: ['Web Exploitation', 'Digital Forensics', 'Binary Pwn', 'OSINT'],
   },
   {
-    period: 'Mei 2026 – Sekarang',
+    period: 'May 2026 – Present',
     type: 'Competitor',
     role: 'Bug Hunter — National Bug Bounty Program',
     company: 'Pusdatin Kemendikdasmen — Jakarta (Remote)',
-    desc: 'Terpilih sebagai peserta individu dalam ajang kompetisi keamanan siber tingkat nasional. Berfokus pada pengujian penetrasi aplikasi web kementerian dengan mengacu pada standar keamanan siber internasional OWASP Top 10 2021 untuk membangun resiliensi siber pendidikan Indonesia.',
+    desc: 'Selected as an individual participant in a national cybersecurity competition. Focused on web application penetration testing of government ministry systems, applying the OWASP Top 10 2021 international security standard to strengthen the cyber resilience of Indonesia\'s education sector.',
     tags: ['Vulnerability Assessment', 'OWASP Top 10', 'Web Penetration Testing', 'Cyber Resilience'],
   },
 ]
@@ -24,11 +24,11 @@ const Experience = () => {
         <div className="exp-header">
           <div>
             <div className="section-label">Experience</div>
-            <h2 className="section-title">Rekam Jejak</h2>
+            <h2 className="section-title">Track Record</h2>
           </div>
           <a href="https://github.com/DevanTQ" target="_blank" rel="noreferrer" className="btn-secondary" style={{ whiteSpace: 'nowrap' }}>
             <i className="fa-brands fa-github"></i>
-            <span>Lihat GitHub</span>
+            <span>View GitHub</span>
           </a>
         </div>
 

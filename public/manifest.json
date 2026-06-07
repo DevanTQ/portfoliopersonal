@@ -1,0 +1,20 @@
+{
+  "name": "Devandra El Syadam — Portfolio",
+  "short_name": "Devandra",
+  "description": "Portfolio of Devandra El Syadam — Aspiring Digital Forensics Analyst, Physics Student, and Developer based in Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#0f0f0f",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon2.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

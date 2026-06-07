@@ -33,8 +33,8 @@ const Footer = () => {
             <div>
               <div className="footer-brand-name">Devandra El Syadam</div>
               <div className="footer-brand-desc">
-                Physics student, tech enthusiast di Tangerang Selatan, Indonesia.
-                Membangun di persimpangan sains, teknologi, dan kreativitas.
+                Physics student and tech enthusiast based in Tangerang Selatan, Indonesia.
+                Building at the intersection of science, technology, and creativity.
               </div>
               <div className="footer-social">
                 {socials.map((s) => (
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <div className="footer-col-title">Navigasi</div>
+              <div className="footer-col-title">Navigation</div>
               <ul className="footer-links">
                 {navCol1.map((l) => (
                   <li key={l.href}><a href={l.href}>{l.label}</a></li>
@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <div className="footer-col-title">Konten</div>
+              <div className="footer-col-title">Content</div>
               <ul className="footer-links">
                 {navCol2.map((l) => (
                   <li key={l.href}><a href={l.href}>{l.label}</a></li>
@@ -64,13 +64,13 @@ const Footer = () => {
             </div>
 
             <div>
-              <div className="footer-col-title">Lainnya</div>
+              <div className="footer-col-title">More</div>
               <ul className="footer-links">
-                <li><a href="#blog"><i className="fa-solid fa-pen-nib" style={{ fontSize: '0.7rem', marginRight: '0.3rem' }}></i>Blog & Tulisan</a></li>
-                <li><a href="#about">Tentang Saya</a></li>
+                <li><a href="#blog"><i className="fa-solid fa-pen-nib" style={{ fontSize: '0.7rem', marginRight: '0.3rem' }}></i>Blog & Writing</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="https://github.com/DevanTQ" target="_blank" rel="noreferrer">GitHub Repos</a></li>
                 <li><a href="https://devandraelsyadam.netlify.app" target="_blank" rel="noreferrer">Live Portfolio</a></li>
-                <li><a href="#contact">Hubungi Saya</a></li>
+                <li><a href="#contact">Contact Me</a></li>
               </ul>
             </div>
 

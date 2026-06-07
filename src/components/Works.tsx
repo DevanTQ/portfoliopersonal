@@ -5,8 +5,7 @@ const filters = ['all', 'web', 'tools', 'ai', 'security']
 const works = [
   {
     cat: 'ai',
-    gradient: 'work-gradient-1',
-    icon: 'fa-shield-halved',
+    thumb: '/assets/images/witnesschain-thumb.webp',
     link: 'https://developmentweb-service-185916174488.asia-southeast2.run.app',
     category: 'AI · Legal Tech',
     title: 'WitnessChain',
@@ -14,8 +13,7 @@ const works = [
   },
   {
     cat: 'web',
-    gradient: 'work-gradient-2',
-    icon: 'fa-user',
+    thumb: '/assets/images/portfolio-thumb.webp',
     link: 'https://devandraelsyadam.netlify.app',
     category: 'Web · Portfolio',
     title: 'Portfolio Site v1',
@@ -23,8 +21,7 @@ const works = [
   },
   {
     cat: 'web',
-    gradient: 'work-gradient-4',
-    icon: 'fa-book',
+    thumb: '/assets/images/kenangan-thumb.webp',
     link: 'https://kenangan-dotpainting.netlify.app/',
     category: 'Web · Creative',
     title: 'Digital Diary — Workshop Event',
@@ -49,6 +46,10 @@ const Works = () => {
     (w) => activeFilter === 'all' || w.cat === activeFilter
   )
 
+  const gridMaxWidth =
+    filtered.length === 1 ? '420px' :
+    filtered.length === 2 ? '860px' : '100%'
+
   return (
     <section id="works" className="full">
       <div className="works-inner">
@@ -70,15 +71,51 @@ const Works = () => {
           ))}
         </div>
 
-        <div className="works-grid" id="worksGrid" ref={gridRef}>
-          {filtered.map((work) => (
+        <div className="works-grid" id="worksGrid" ref={gridRef} style={{ maxWidth: gridMaxWidth }}>
+          {filtered.length === 0 ? (
+            <div style={{
+              gridColumn: '1 / -1',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.75rem',
+              padding: '4rem 2rem',
+              border: '1px dashed rgba(255,255,255,0.08)',
+              borderRadius: '16px',
+              color: 'var(--text-muted)',
+              textAlign: 'center',
+              width: '100%',
+            }}>
+              <i className="fa-solid fa-folder-open" style={{ fontSize: '2rem', opacity: 0.3 }}></i>
+              <div style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                No projects in this category yet
+              </div>
+              <div style={{ fontSize: '0.82rem', opacity: 0.6 }}>
+                Check back soon — more projects are on the way.
+              </div>
+            </div>
+          ) : filtered.map((work) => (
             <div
               className="work-card reveal visible"
               data-cat={work.cat}
               key={`${activeFilter}-${work.title}`}
             >
-              <div className={`work-thumb ${work.gradient}`}>
-                <i className={`fa-solid ${work.icon} work-thumb-icon`}></i>
+              <div className="work-thumb" style={{
+                backgroundImage: `url(${work.thumb})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center top',
+                position: 'relative',
+                height: '200px',
+                width: '100%',
+                overflow: 'hidden',
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'rgba(8,8,8,0.35)',
+                  transition: 'background 0.3s',
+                }} className="work-thumb-dim" />
                 <div className="work-thumb-overlay">
                   <a href={work.link} className="work-link-btn" target="_blank" rel="noreferrer">
                     <i className="fa-solid fa-eye"></i>

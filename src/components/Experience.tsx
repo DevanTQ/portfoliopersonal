@@ -1,3 +1,5 @@
+import CountdownBadge from './CountdownBadge'
+
 const timelineItems = [
   {
     period: 'February 2026 – March 2026',
@@ -6,14 +8,19 @@ const timelineItems = [
     company: 'VulnByDefault (VBD) — Remote, International',
     desc: 'Ranked 59 out of 702 international teams in Ramadan CTF 2026, completing a range of complex challenges including Web Exploitation (NoSQL injection & prototype pollution), Kernel Pwn analysis (heap leak), and forensic investigation with precision-coordinate OSINT.',
     tags: ['Web Exploitation', 'Digital Forensics', 'Binary Pwn', 'OSINT'],
+    countdown: null,
   },
   {
-    period: 'May 2026 – Present',
-    type: 'Competitor',
-    role: 'Bug Hunter — National Bug Bounty Program',
-    company: 'Pusdatin Kemendikdasmen — Jakarta (Remote)',
-    desc: 'Selected as an individual participant in a national cybersecurity competition. Focused on web application penetration testing of government ministry systems, applying the OWASP Top 10 2021 international security standard to strengthen the cyber resilience of Indonesia\'s education sector.',
-    tags: ['Vulnerability Assessment', 'OWASP Top 10', 'Web Penetration Testing', 'Cyber Resilience'],
+    period: 'June 2026 – July 2026',
+    type: 'Upcoming · Solo · General Track',
+    role: 'Competitor — Wreck-IT 7.0 CTF',
+    company: 'Poltek SSN (BSSN) — Online Qualifier & On-site Final',
+    desc: 'Selected to compete solo in the General Track of Wreck-IT 7.0, a national-level CTF organized by Poltek SSN under BSSN. Online qualifier kicks off on June 20, 2026, with the on-site final held on July 8, 2026 in Jakarta. Covering forensics, cryptography, web exploitation, steganography, and network forensics.',
+    tags: ['Forensics', 'Cryptography', 'Web Exploitation', 'Steganography', 'Network Forensics'],
+    countdown: {
+      qualifier: { date: '2026-06-20T00:00:00+07:00', label: 'Online Qualifier — June 20, 2026' },
+      final:     { date: '2026-07-08T00:00:00+07:00', label: 'On-site Final — July 8, 2026' },
+    },
   },
 ]
 
@@ -42,6 +49,21 @@ const Experience = () => {
               <div className="timeline-role">{item.role}</div>
               <div className="timeline-company">{item.company}</div>
               <div className="timeline-desc">{item.desc}</div>
+
+              {item.countdown && (
+                <div className="timeline-countdown" style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '1rem',
+                  margin: '1rem 0',
+                }}>
+                  <CountdownBadge
+                    targetDate={item.countdown.qualifier.date}
+                    label={item.countdown.qualifier.label}
+                  />
+                </div>
+              )}
+
               <div className="timeline-tags">
                 {item.tags.map((tag) => (
                   <span className="tag" key={tag}>{tag}</span>

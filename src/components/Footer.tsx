@@ -81,8 +81,8 @@ const Footer = () => {
               &copy; 2026 Devandra El Syadam. All rights reserved. Built with passion in South Tangerang.
             </div>
             <div className="footer-legal">
-              <a href="https://www.termsfeed.com/live/1a8cc740-9e59-4f82-967d-bdb0a3c5eb6c" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-              <a href="https://www.termsfeed.com/live/17d2023a-5579-4443-a6a5-9768ebcb35e1" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+              <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              <a href="/terms-of-use.html" target="_blank" rel="noopener noreferrer">Terms of Use</a>
             </div>
           </div>
         </div>

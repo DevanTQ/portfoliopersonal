@@ -62,32 +62,6 @@ High-performance portfolio achieving GTmetrix Grade A (92%). Full SEO setup, sel
 
 ---
 
-## Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/DevanTQ/portfoliopersonal.git
-cd portfoliopersonal
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-Output will be in the `dist/` directory, ready to deploy to Netlify or any static host.
-
----
-
 ## Performance
 
 | Metric | Score |

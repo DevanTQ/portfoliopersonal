@@ -1,19 +1,16 @@
 <div align="center">
 
-# Devandra El Syadam
-### Personal Portfolio — Physics · Cybersecurity · Builder
+# Devandra El Syadam — Personal Portfolio
 
-<br/>
+![Stack](https://img.shields.io/badge/react-18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=1a1a2e)
+![TypeScript](https://img.shields.io/badge/typescript-5.0-007ACC?style=flat-square&logo=typescript&logoColor=white&labelColor=1a1a2e)
+![Vite](https://img.shields.io/badge/vite-5.0-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=1a1a2e)
+![Tailwind](https://img.shields.io/badge/tailwind-3.0-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=1a1a2e)
+![Deployed](https://img.shields.io/badge/deployed-netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white&labelColor=1a1a2e)
+![GTmetrix](https://img.shields.io/badge/gtmetrix-A%20(92%25)-00c896?style=flat-square&labelColor=1a1a2e)
 
-[![Portfolio](https://img.shields.io/badge/🌐_Live_Site-devandraelsyadam.netlify.app-0a0a0a?style=for-the-badge&logoColor=white)](https://devandraelsyadam.netlify.app)
-
-<br/>
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+**Physics Student · Cybersecurity Enthusiast · Builder**  
+Live at [devandraelsyadam.netlify.app](https://devandraelsyadam.netlify.app)
 
 </div>
 

@@ -27,6 +27,14 @@ const works = [
     title: 'Digital Diary — Workshop Event',
     desc: 'Web diary documenting a dot painting workshop event, featuring copy protection, folder hierarchy, and profile photo frame.',
   },
+  {
+    cat: 'tools',
+    thumb: '/assets/images/ford-thumb.webp',
+    link: 'https://github.com/DevanTQ/Ford',
+    category: 'Tools · CLI',
+    title: 'FORD — Forensic Decoder',
+    desc: 'Zero-dependency CLI for rapid encoding triage and multi-layer cryptanalysis. Auto-detects Base64, Hex, ROT, Caesar, XOR, and more. Features recursive decode chaining (--depth), IOC extraction for CTF flags/IPs/URLs, Shannon entropy scoring, magic byte detection, and hash identification. Built for CTF & DFIR.',
+  },
 ]
 
 const Works = () => {

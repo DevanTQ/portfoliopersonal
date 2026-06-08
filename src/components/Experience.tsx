@@ -11,6 +11,15 @@ const timelineItems = [
     countdown: null,
   },
   {
+    period: 'May 2026',
+    type: 'Contestant (Submitted)',
+    role: 'Solo Developer — JuaraVibeCoding 2026',
+    company: 'Google for Developers Indonesia — Remote',
+    desc: 'Built and submitted WitnessChain — an AI-powered legal evidence documentation platform for forced eviction and human rights violation victims in Indonesia. Stack: Next.js 14, Supabase, Gemini 2.5 Flash, Google Cloud Run. Features include AI-guided interview, SHA-256 evidence hashing, Legal Radar AI, Timeline Visualizer, and Google Maps legal aid referral.',
+    tags: ['Next.js 14', 'Supabase', 'Gemini AI', 'Google Cloud Run', 'Full-Stack'],
+    countdown: null,
+  },
+  {
     period: 'June 2026 – July 2026',
     type: 'Upcoming · Solo · General Track',
     role: 'Competitor — Wreck-IT 7.0 CTF',

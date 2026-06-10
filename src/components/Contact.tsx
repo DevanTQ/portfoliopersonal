@@ -16,7 +16,7 @@ const contactItems = [
 const socials = [
   { href: 'https://linkedin.com/in/devandraelsyadam', icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn' },
   { href: 'https://github.com/DevanTQ',               icon: 'fa-brands fa-github',      label: 'GitHub' },
-  { href: 'https://instagram.com/dvnnaell',         icon: 'fa-brands fa-instagram',   label: 'Instagram' },
+  { href: 'https://instagram.com/dvnnaell',           icon: 'fa-brands fa-instagram',   label: 'Instagram' },
   { href: 'https://devandraelsyadam.netlify.app',     icon: 'fa-solid fa-globe',         label: 'Portfolio' },
 ]
 
@@ -40,7 +40,7 @@ const Contact = () => {
     }).toString()
 
     try {
-      const res = await fetch(window.location.href, {
+      const res = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,

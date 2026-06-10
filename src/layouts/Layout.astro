@@ -1,0 +1,99 @@
+---
+// Layout.astro — replaces index.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon2.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>Devandra El Syadam | Portfolio</title>
+  <meta name="msvalidate.01" content="DBF7D459C052078BFD36717D556C2084" />
+  <meta name="google-site-verification" content="3reMB1wCsIRoaWZrkkB_-StWryBDydFUJLwdVx6AD2M" />
+  <meta name="description" content="Portfolio of Devandra El Syadam – Aspiring Digital Forensics Analyst, Physics Student, and Developer based in Indonesia." />
+  <meta name="keywords" content="Devandra El Syadam, physics student, digital forensics, cybersecurity, developer Indonesia, web development, CTF, WitnessChain, technology enthusiast" />
+  <meta name="author" content="Devandra El Syadam" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f0f0f" />
+  <link rel="canonical" href="https://devandraelsyadam.netlify.app" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devandraelsyadam.netlify.app" />
+  <meta property="og:title" content="Devandra El Syadam | Aspiring Digital Forensics Analyst & Developer" />
+  <meta property="og:description" content="Portfolio of Devandra El Syadam – Aspiring Digital Forensics Analyst, Physics Student, and Developer based in Indonesia." />
+  <meta property="og:image" content="https://devandraelsyadam.netlify.app/og-desk.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Devandra El Syadam Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Devandra El Syadam | Aspiring Digital Forensics Analyst" />
+  <meta name="twitter:description" content="Portfolio of Devandra El Syadam – Aspiring Digital Forensics Analyst, Physics Student, and Developer based in Indonesia." />
+  <meta name="twitter:image" content="https://devandraelsyadam.netlify.app/og-desk.jpg" />
+
+  <meta name="geo.region" content="ID-BT" />
+  <meta name="geo.placename" content="Tangerang Selatan, Banten, Indonesia" />
+  <meta name="geo.position" content="-6.2897;106.7167" />
+  <meta name="ICBM" content="-6.2897, 106.7167" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Devandra El Syadam",
+    "jobTitle": "Aspiring Digital Forensics Analyst & Physics Student",
+    "description": "Physics student at UIN Syarif Hidayatullah Jakarta with a strong passion for cybersecurity and digital forensics. Holds certifications from Cisco, Fortinet, and Dicoding. Active CTF competitor and builder of WitnessChain, an AI-powered legal evidence documentation platform.",
+    "url": "https://devandraelsyadam.netlify.app",
+    "image": "https://devandraelsyadam.netlify.app/og-desk.jpg",
+    "email": "devandraelsyadam1@gmail.com",
+    "gender": "Male",
+    "sameAs": [
+      "https://linkedin.com/in/devandraelsyadam",
+      "https://github.com/DevanTQ",
+      "https://instagram.com/dvnnaell"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tangerang Selatan",
+      "addressRegion": "Banten",
+      "addressCountry": "ID"
+    },
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "SMKS Sasmita Jaya 1" },
+      { "@type": "EducationalOrganization", "name": "UIN Syarif Hidayatullah Jakarta", "department": "Faculty of Science and Technology" }
+    ],
+    "knowsAbout": ["Cybersecurity","Digital Forensics","Web Development","Physics","CTF","Cryptography","Python","Cloud Computing","Artificial Intelligence","Google Cloud Platform","Amazon Web Services","Network Security","Threat Analysis"]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Assets (same as before — stays in /public/assets/) -->
+  <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/responsif.css" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+</head>
+<body>
+  <!-- Netlify form detection (hidden, same as before) -->
+  <form hidden method="post" name="contact">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <!-- Page content injected here -->
+  <slot />
+
+  <!-- External JS (same as before) -->
+  <script src="/assets/js/chart.umd.min.js" is:inline></script>
+  <script src="/assets/js/main.js" is:inline></script>
+</body>
+</html>

@@ -82,22 +82,29 @@ const Skills = () => {
       (window as any)._chartInited[activeTab] = false
     }
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        if (typeof (window as any).initChart === 'function') {
-          (window as any).initChart(activeTab)
-        }
+    // Wait for Chart.js to be available (loaded via main.js)
+    const tryInitChart = (retries = 10) => {
+      if (typeof (window as any).initChart === 'function') {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            (window as any).initChart(activeTab)
 
-        const panel = document.getElementById(`panel-${activeTab}`)
-        if (panel) {
-          panel.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => {
-            if (!el.classList.contains('visible')) {
-              el.classList.add('visible')
+            const panel = document.getElementById(`panel-${activeTab}`)
+            if (panel) {
+              panel.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => {
+                if (!el.classList.contains('visible')) {
+                  el.classList.add('visible')
+                }
+              })
             }
           })
-        }
-      })
-    })
+        })
+      } else if (retries > 0) {
+        setTimeout(() => tryInitChart(retries - 1), 150)
+      }
+    }
+
+    tryInitChart()
   }, [activeTab])
 
   return (
@@ -131,16 +138,11 @@ const Skills = () => {
             >
               <div className="skills-grid" style={{ marginTop: 0 }}>
 
-                {/* ── Chart card ── */}
                 <div className="skills-chart-scroll-wrap">
                   <div className="skills-chart-card">
                     <div className="about-chart-title" style={{ marginBottom: '1.5rem' }}>
                       {chartByDomain[tab.id].label}
                     </div>
-                    {/*
-                      Canvas width is fully controlled by CSS.
-                      maxHeight is capped to prevent overflow on narrow screens.
-                    */}
                     <canvas
                       id={chartByDomain[tab.id].id}
                       style={{ maxHeight: '320px' }}

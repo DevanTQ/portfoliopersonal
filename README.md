@@ -2,12 +2,12 @@
 
 # Devandra El Syadam — Personal Portfolio
 
-![Stack](https://img.shields.io/badge/react-18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=1a1a2e)
+![Stack](https://img.shields.io/badge/astro-4.x-FF5D01?style=flat-square&logo=astro&logoColor=white&labelColor=1a1a2e)
+![React](https://img.shields.io/badge/react-18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=1a1a2e)
 ![TypeScript](https://img.shields.io/badge/typescript-5.0-007ACC?style=flat-square&logo=typescript&logoColor=white&labelColor=1a1a2e)
-![Vite](https://img.shields.io/badge/vite-5.0-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=1a1a2e)
-![Tailwind](https://img.shields.io/badge/tailwind-3.0-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=1a1a2e)
 ![Deployed](https://img.shields.io/badge/deployed-netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white&labelColor=1a1a2e)
 ![GTmetrix](https://img.shields.io/badge/gtmetrix-A%20(92%25)-00c896?style=flat-square&labelColor=1a1a2e)
+![SSG](https://img.shields.io/badge/rendering-static%20SSG-FF5D01?style=flat-square&labelColor=1a1a2e)
 
 **Physics Student · Cybersecurity Enthusiast · Builder**  
 Live at [devandraelsyadam.netlify.app](https://devandraelsyadam.netlify.app)
@@ -49,16 +49,16 @@ AI-powered legal evidence documentation platform for human rights violation vict
 ### 🔍 FORD — Forensic Decoder
 Zero-dependency CLI for rapid encoding triage and multi-layer cryptanalysis. Auto-detects Base64, Hex, ROT, Caesar, XOR, and more. Built for CTF & DFIR workflows.
 
-### 🌐 Portfolio Site v1
-High-performance portfolio achieving GTmetrix Grade A (92%). Full SEO setup, self-hosted fonts, WebP images, and indexed on Google Search Console + Bing Webmaster Tools.
+### 🌐 Portfolio Site v2 (this repo)
+Migrated from Vite/CSR to **Astro SSG** for full static HTML output — enabling proper crawling and indexing by Bing and Google. GTmetrix Grade A (92%), self-hosted fonts, WebP images, and indexed on Google Search Console + Bing Webmaster Tools.
 
 ---
 
 ## Tech Stack
 
-- **Framework** — React + TypeScript (TSX)
-- **Build Tool** — Vite
-- **Styling** — Tailwind CSS
+- **Framework** — Astro (Static Site Generation)
+- **UI Components** — React + TypeScript (TSX)
+- **Styling** — Custom CSS (no framework)
 - **Fonts** — Syne + DM Sans (self-hosted)
 - **Deployment** — Netlify
 - **SEO** — Google Search Console, Bing Webmaster Tools, sitemap, IndexNow
@@ -71,6 +71,7 @@ High-performance portfolio achieving GTmetrix Grade A (92%). Full SEO setup, sel
 |---|---|
 | GTmetrix Grade | **A (92%)** |
 | PageSpeed (Desktop) | ✅ Optimized |
+| Rendering | ✅ Static HTML (SSG via Astro) |
 | Self-hosted Fonts | ✅ No external requests |
 | Image Format | WebP throughout |
 | SEO Indexing | Google Search Console + Bing |
@@ -82,6 +83,7 @@ High-performance portfolio achieving GTmetrix Grade A (92%). Full SEO setup, sel
 - 🏆 **Rank 59 / 702 teams** — Ramadan CTF 2026 (International)
 - 🤖 **WitnessChain** — submitted to JuaraVibeCoding 2026 · Google for Developers
 - ⚡ **GTmetrix Grade D → A** in a single optimization sprint
+- 🚀 **Migrated to Astro SSG** — full static HTML for proper search engine indexing
 - 🎓 **SNBP 2026** — accepted into Physics, UIN Syarif Hidayatullah Jakarta
 - 🛡️ Competing in **Wreck-IT 7.0** (Poltek SSN / BSSN) — June–July 2026
 

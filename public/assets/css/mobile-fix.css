@@ -1,0 +1,285 @@
+@media (max-width: 768px) {
+  .section-title {
+    font-size: clamp(1.75rem, 7.5vw, 2.4rem) !important;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   2. HIGHLIGHTS — stat cards & highlight cards
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Padding section */
+  #testimonials {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .testi-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Stats grid: 2 kolom */
+  .highlights-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .hl-stat {
+    min-height: unset;
+    padding: 1.25rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Angka stat tidak terpotong */
+  .hl-stat-num {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    white-space: nowrap;
+    line-height: 1.1 !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .hl-stat-label {
+    font-size: 0.62rem !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  /* Highlight cards: full width, 1 kolom */
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .hl-card {
+    padding: 1.25rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .hl-top {
+    gap: 0.75rem;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .hl-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* Title tidak terpotong */
+  .hl-title {
+    font-size: 0.88rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hl-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hl-desc {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Org text tidak terpotong */
+  .hl-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .hl-org {
+    font-size: 0.72rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Background number dikecilkan */
+  .hl-bg-num {
+    font-size: 3.5rem;
+    opacity: 0.015;
+  }
+}
+
+@media (max-width: 480px) {
+  .hl-stat-num {
+    font-size: clamp(1.4rem, 6.5vw, 1.9rem) !important;
+  }
+
+  .hl-card {
+    padding: 1rem 0.85rem;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   3. METRICS — chart cards & principles
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  #metrics {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .metrics-inner {
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+
+  /* Charts: 1 kolom, full width */
+  .growth-charts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .about-chart-card {
+    width: 100%;
+    padding: 1.1rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .about-chart-title {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: break-word;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Canvas responsif, tidak overflow */
+  .about-chart-card canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 200px !important;
+    display: block;
+  }
+
+  /* Principles: 2 kolom di 768px */
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .principle-card {
+    padding: 1.1rem 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .principle-title {
+    font-size: 0.85rem;
+  }
+
+  .principle-desc {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Principles: 1 kolom di layar sangat kecil */
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-chart-card canvas {
+    max-height: 175px !important;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   4. SKILLS — chart X-axis label (cyber bar chart)
+      Fix label miring terpotong dengan reduce font size
+   ---------------------------------------------------------- */
+
+/* Chart.js tick font override via CSS tidak langsung bisa,
+   tapi kita bisa pastikan container tidak clipping */
+@media (max-width: 768px) {
+  .skills-chart-card {
+    padding-bottom: 1.5rem;
+  }
+
+  /* Tambah ruang bawah chart supaya label X-axis tidak terpotong */
+  .skills-chart-card canvas {
+    max-height: 230px !important;
+    padding-bottom: 0;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   5. SECTION PADDING — kurangi padding atas bawah di mobile
+      supaya konten tidak terasa terlalu "jauh"
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  #testimonials,
+  #metrics,
+  #skills {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   6. OVERFLOW GUARD GLOBAL
+      Pastikan tidak ada elemen yang jebol ke kanan
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .testi-inner,
+  .metrics-inner,
+  .skills-inner {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

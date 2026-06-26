@@ -10,14 +10,14 @@ type FormData = {
 const contactItems = [
   { icon: 'fa-regular fa-envelope',   label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
   { icon: 'fa-solid fa-location-dot', label: 'Location',      val: 'Tangerang Selatan, Banten, Indonesia' },
-  { icon: 'fa-solid fa-clock',        label: 'Response Time', val: 'Within 24 business hours' },
+  { icon: 'fa-solid fa-clock',        label: 'Response Time', val: 'Within a business day' },
 ]
 
 const socials = [
   { href: 'https://linkedin.com/in/devandraelsyadam', icon: 'fa-brands fa-linkedin-in', label: 'LinkedIn' },
   { href: 'https://github.com/DevanTQ',               icon: 'fa-brands fa-github',      label: 'GitHub' },
   { href: 'https://instagram.com/dvnnaell',           icon: 'fa-brands fa-instagram',   label: 'Instagram' },
-  { href: 'https://devandraelsyadam.netlify.app',     icon: 'fa-solid fa-globe',         label: 'Portfolio' },
+  { href: 'https://devandraelsyadam.netlify.app',     icon: 'fa-solid fa-globe',        label: 'Portfolio' },
 ]
 
 const Contact = () => {
@@ -65,8 +65,7 @@ const Contact = () => {
           <div className="section-label">Contact</div>
           <h2 className="section-title">Let's Collaborate</h2>
           <p className="section-desc" style={{ marginBottom: 0 }}>
-            Have an interesting project, a question, or just want to talk about technology and science?
-            I'm always open for a good discussion.
+            Got a project in mind, a question, or just want to chat about tech and science? Drop me a message.
           </p>
 
           <div className="contact-items">

@@ -1,5 +1,5 @@
 ---
-// src/pages/index.astro — replaces App.tsx
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro'
 import Intro from '../components/Intro'
 import Navbar from '../components/Navbar'
@@ -16,6 +16,32 @@ import Blog from '../components/Blog'
 import Highlights from '../components/Highlights'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+
+// 1. Fetch data di sisi server (aman & SEO friendly)
+const BLOG_ID = import.meta.env.BLOG_ID;
+const API_KEY = import.meta.env.BLOGGER_API_KEY;
+const BLOGGER_API = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&maxResults=6`;
+
+let posts = [];
+try {
+  const res = await fetch(BLOGGER_API);
+  const data = await res.json();
+  const entries = data.items || [];
+  
+  posts = entries.map((entry: any) => ({
+    icon: "fa-pen-nib",
+    cat: entry.labels?.[0] || "Blog",
+    title: entry.title,
+    excerpt: entry.content?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." || "",
+    date: new Date(entry.published).toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    }),
+    href: entry.url || "#",
+  }));
+} catch (e) {
+  console.error("Gagal mengambil data blog:", e);
+}
 ---
 
 <Layout>
@@ -50,8 +76,8 @@ import Footer from '../components/Footer'
     <div class="gradient-divider" />
     <Metrics client:load />
 
-    <div class="gradient-divider" />
-    <Blog client:load />
+    <!-- 2. Lempar data 'posts' ke komponen Blog -->
+    <Blog posts={posts} client:visible />
 
     <div class="gradient-divider" />
     <Highlights />

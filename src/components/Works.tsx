@@ -4,36 +4,36 @@ const filters = ['all', 'web', 'tools', 'ai', 'security']
 
 const works = [
   {
-    cat: 'ai',
+    cat: ['ai', 'web'],
     thumb: '/assets/images/witnesschain-thumb.webp',
     link: 'https://developmentweb-service-185916174488.asia-southeast2.run.app',
     category: 'AI · Legal Tech',
     title: 'WitnessChain',
-    desc: 'AI-powered legal evidence documentation platform for human rights violation victims in Indonesia. Built with Next.js 14, Supabase, Gemini 2.5 Flash, and deployed on Google Cloud Run. Features SHA-256 evidence hashing, Legal Radar AI, Timeline Visualizer, and Google Maps legal aid referral.',
+    desc: 'A legal evidence documentation platform driven by AI for victims of human rights violations in Indonesia. It was built using Next.js 14, Supabase, and Gemini 2.5 Flash, then deployed on Google Cloud Run. The system includes SHA-256 evidence hashing, Legal Radar AI, a Timeline Visualizer, and legal aid referrals via Google Maps.',
   },
   {
-    cat: 'web',
+    cat: ['web'],
     thumb: '/assets/images/portfolio-thumb.webp',
     link: 'https://devandraelsyadam.netlify.app',
     category: 'Web · Portfolio',
     title: 'Portfolio Site v1',
-    desc: 'High-performance portfolio with GTmetrix Grade A (92%). Full SEO, self-hosted fonts, WebP images, and indexed on Search Console.',
+    desc: 'A portfolio site optimized for high performance, achieving a GTmetrix Grade A (92%). It features a complete SEO setup, self-hosted fonts, and WebP images indexed on Search Console.',
   },
   {
-    cat: 'web',
+    cat: ['web'],
     thumb: '/assets/images/kenangan-thumb.webp',
     link: 'https://kenangan-dotpainting.netlify.app/',
     category: 'Web · Creative',
-    title: 'Digital Diary — Workshop Event',
-    desc: 'Web diary documenting a dot painting workshop event, featuring copy protection, folder hierarchy, and profile photo frame.',
+    title: 'Digital Diary: Workshop Event',
+    desc: 'A web diary that documents a dot painting workshop event. It includes copy protection, a structured folder hierarchy, and a custom frame for profile photos.',
   },
   {
-    cat: 'tools',
+    cat: ['tools', 'security'],
     thumb: '/assets/images/ford-thumb.webp',
     link: 'https://github.com/DevanTQ/Ford',
     category: 'Tools · CLI',
-    title: 'FORD — Forensic Decoder',
-    desc: 'Zero-dependency CLI for rapid encoding triage and multi-layer cryptanalysis. Auto-detects Base64, Hex, ROT, Caesar, and XOR. Features recursive decoding (--depth), IOC extraction (flags/IPs/URLs), Shannon entropy scoring, magic bytes, and hash identification. Built for CTF & DFIR.',
+    title: 'FORD: Forensic Decoder',
+    desc: 'A CLI tool with zero dependencies designed for quick encoding triage and multi-layered cryptanalysis. It automatically detects Base64, Hex, ROT, Caesar, and XOR while featuring recursive decoding (--depth), IOC extraction for flags, IPs, or URLs, Shannon entropy scoring, magic bytes, and hash identification for CTF and DFIR work.',
   },
 ]
 
@@ -51,7 +51,7 @@ const Works = () => {
   }, [activeFilter])
 
   const filtered = works.filter(
-    (w) => activeFilter === 'all' || w.cat === activeFilter
+    (w) => activeFilter === 'all' || w.cat.includes(activeFilter)
   )
 
   return (
@@ -60,7 +60,7 @@ const Works = () => {
         <div className="section-label reveal">Portfolio</div>
         <h2 className="section-title reveal">Selected Projects</h2>
         <p className="section-desc reveal">
-          A collection of projects I've built — from tools and web apps to technology experiments.
+          A collection of tools, web applications, and technical experiments that I have built.
         </p>
 
         <div className="works-filter reveal">
@@ -114,14 +114,14 @@ const Works = () => {
                 No projects in this category yet
               </div>
               <div style={{ fontSize: '0.82rem', opacity: 0.6 }}>
-                Check back soon — more projects are on the way.
+                Check back soon, as more projects are currently on the way.
               </div>
             </div>
           ) : (
             filtered.map((work) => (
               <div
                 className="work-card reveal visible"
-                data-cat={work.cat}
+                data-cat={work.cat.join(' ')}
                 key={`${activeFilter}-${work.title}`}
               >
                 <div

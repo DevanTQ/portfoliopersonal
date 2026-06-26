@@ -31,7 +31,7 @@ const certs = [
     href: 'https://drive.google.com/file/d/1I3RtWCYHj8H-0L1tnJltTUVeSu7ZhN2V/view?usp=sharing',
     icon: 'fa-solid fa-trophy',
     name: 'Ramadan CTF 2026 — Certificate of Participation',
-    issuer: 'VulnByDefault · Rank 59 / 702 Teams · 665 pts',
+    issuer: 'VulnByDefault · Rank 59 of 702 Teams · 665 pts',
     year: 'March 2026',
   },
   {
@@ -40,6 +40,13 @@ const certs = [
     name: 'Introduction to the Threat Landscape 3.0',
     issuer: 'Fortinet Training Institute',
     year: 'June 2026',
+  },
+  {
+    href: 'https://drive.google.com/file/d/1vf4dT8xhE25fH5sbLMnTFOvNBFaNDIlK/view?usp=sharing',
+    icon: 'fa-brands fa-google',
+    name: 'TOP 100 #JuaraVibeCoding (Vibe Coding Study Jam)',
+    issuer: 'Google Developer Groups · ID: JVC2605-PA5Y-BKDR',
+    year: 'May 2026',
   },
 ]
 
@@ -50,7 +57,7 @@ const Certifications = () => {
         <div className="section-label reveal">Certifications</div>
         <h2 className="section-title reveal">Certifications & Credentials</h2>
         <p className="section-desc reveal">
-          A commitment to continuous learning — spanning cloud computing, AI, cryptography, and cybersecurity.
+          Covering cloud computing, AI, cryptography, and cybersecurity — picked up through consistent self-study and hands-on practice.
         </p>
 
         <div className="cert-grid">
@@ -71,7 +78,7 @@ const Certifications = () => {
             <div className="cert-body">
               <div className="cert-name">Next certification in progress...</div>
               <div className="cert-issuer">Ongoing Learning</div>
-              <span className="cert-year">2026</span>
+              <span className="cert-year">........</span>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ Live at [devandraelsyadam.netlify.app](https://devandraelsyadam.netlify.app)
 
 ## About
 
-Personal portfolio website for **Devandra El Syadam** — a Physics student at UIN Syarif Hidayatullah Jakarta with a background in Visual Communication Design and a focus on Cybersecurity, Digital Forensics, and full-stack development.
+Personal portfolio website for **Devandra El Syadam**, a Physics student at UIN Syarif Hidayatullah Jakarta with a background in Visual Communication Design and a focus on Cybersecurity, Digital Forensics.
 
 This site serves as a central hub for projects, CTF achievements, certifications, and writing.
 
@@ -33,7 +33,7 @@ This site serves as a central hub for projects, CTF achievements, certifications
 | **Education** | Academic history from DKV vocational to Physics degree |
 | **Skills & Tools** | Four domains: Physics, Cyber & Forensics, Design, Web & Tools |
 | **Focus** | Deep-dive areas of study and exploration |
-| **Projects** | Selected builds — web apps, CLI tools, AI integrations |
+| **Projects** | Selected builds: web apps, CLI tools, AI integrations |
 | **Certifications** | AWS, Cisco, Fortinet, Dicoding, and more |
 | **Blog** | Notes and writeups on science, security, and tech |
 | **Highlights** | Key milestones and achievements with context |
@@ -46,11 +46,11 @@ This site serves as a central hub for projects, CTF achievements, certifications
 ### ⚖️ WitnessChain
 AI-powered legal evidence documentation platform for human rights violation victims in Indonesia. Built with Next.js 14, Supabase, Gemini 2.5 Flash, and Google Cloud Run. Submitted to JuaraVibeCoding 2026 by Google for Developers.
 
-### 🔍 FORD — Forensic Decoder
+### 🔍 FORD (Forensic Decoder)
 Zero-dependency CLI for rapid encoding triage and multi-layer cryptanalysis. Auto-detects Base64, Hex, ROT, Caesar, XOR, and more. Built for CTF & DFIR workflows.
 
 ### 🌐 Portfolio Site v2 (this repo)
-Migrated from Vite/CSR to **Astro SSG** for full static HTML output — enabling proper crawling and indexing by Bing and Google. GTmetrix Grade A (92%), self-hosted fonts, WebP images, and indexed on Google Search Console + Bing Webmaster Tools.
+Migrated from Vite/CSR to **Astro SSG** for full static HTML output, enabling proper crawling and indexing by Bing and Google. GTmetrix Grade A (92%), self-hosted fonts, WebP images, and indexed on Google Search Console + Bing Webmaster Tools.
 
 ---
 
@@ -80,11 +80,11 @@ Migrated from Vite/CSR to **Astro SSG** for full static HTML output — enabling
 
 ## Highlights
 
-- 🏆 **Rank 59 / 702 teams** — Ramadan CTF 2026 (International)
-- 🤖 **WitnessChain** — submitted to JuaraVibeCoding 2026 · Google for Developers
-- ⚡ **GTmetrix Grade D → A** in a single optimization sprint
-- 🚀 **Migrated to Astro SSG** — full static HTML for proper search engine indexing
-- 🎓 **SNBP 2026** — accepted into Physics, UIN Syarif Hidayatullah Jakarta
+- 🏆 **Rank 59 / 702 teams** at Ramadan CTF 2026 (International)
+- 🤖 **WitnessChain** submitted to JuaraVibeCoding 2026 by Google for Developers
+- ⚡ **GTmetrix Grade D to A** in a single optimization sprint
+- 🚀 **Migrated to Astro SSG** for full static HTML and proper search engine indexing
+- 🎓 **SNBP 2026** accepted into Physics at UIN Syarif Hidayatullah Jakarta
 - 🛡️ Competing in **Wreck-IT 7.0** (Poltek SSN / BSSN) — June–July 2026
 
 ---

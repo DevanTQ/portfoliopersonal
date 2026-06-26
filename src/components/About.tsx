@@ -8,10 +8,10 @@ const About = () => {
   ]
 
   const highlights = [
-    { icon: 'fa-atom',             title: 'Scientific & Analytical',  desc: 'Approaching every problem with logic and scientific methods as the foundation.' },
-    { icon: 'fa-seedling',         title: 'Continuous Learner',       desc: 'Self-study, experimentation, and adaptation are a core part of my daily routine.' },
-    { icon: 'fa-compass-drafting', title: 'Creative & Technical',     desc: 'A design background gives me visual sensitivity that complements my technical skills.' },
-    { icon: 'fa-hammer',           title: 'Builder Mindset',          desc: 'I enjoy building things — from websites and tools to ideas that become real products.' },
+    { icon: 'fa-atom',             title: 'Scientific & Analytical',  desc: 'Every problem gets broken down with logic and scientific thinking at its core.' },
+    { icon: 'fa-seedling',         title: 'Continuous Learner',       desc: 'Self-study, experimentation, and staying adaptable are habits I keep every day.' },
+    { icon: 'fa-compass-drafting', title: 'Creative & Technical',     desc: 'Years in design sharpened my visual instincts, and they carry over into everything technical I build.' },
+    { icon: 'fa-hammer',           title: 'Builder Mindset',          desc: 'Whether it\'s a website, a CLI tool, or a rough idea, I like seeing things go from concept to something real.' },
   ]
 
   return (
@@ -23,15 +23,15 @@ const About = () => {
           <h2 className="section-title">Curiosity-Driven, Science-Backed</h2>
           <p>
             I'm <strong>Devandra El Syadam</strong>, a Physics student at UIN Jakarta who started out in the world of design at SMKS Sasmita Jaya 1.
-            It might seem like an unusual path, but to me, Design, Physics, and Technology are one package — all about understanding patterns and solving problems.
+            It might seem like an unusual path, but to me, Design, Physics, and Technology go hand in hand — all about reading patterns and solving the right problems.
           </p>
           <p>
-            These days, I spend most of my time between lectures and the screen, combining
-            <strong> scientific logic</strong> with the world of <strong>cybersecurity</strong>.
+            Most of my time now sits somewhere between lectures and the screen, where
+            <strong> scientific logic</strong> meets the world of <strong>cybersecurity</strong>.
             Every line of code and every security vulnerability is an experiment that demands precision.
           </p>
           <p>
-            Outside of class, I actively sharpen my <em>problem-solving</em> through CTF (Capture The Flag) platforms and
+            Outside of class, I keep my <em>problem-solving</em> sharp through CTF (Capture The Flag) platforms and
             various cybersecurity challenges, particularly in log analysis, digital trails, and forensic investigation
             to understand and secure digital systems.
           </p>

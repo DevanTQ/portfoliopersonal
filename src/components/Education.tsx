@@ -2,25 +2,25 @@ const eduItems = [
   {
     icon: 'fa-compass-drafting',
     period: '2023 – 2026',
-    degree: 'Vocational High School — Visual Communication Design',
-    school: 'SMKS Sasmita Jaya 1 Pamulang — Tangerang Selatan',
-    desc: 'Spent three years studying Visual Communication Design, building a strong foundation in graphic design, visual storytelling, and design-based communication.',
+    degree: 'Vocational High School (Visual Communication Design)',
+    school: 'SMKS Sasmita Jaya 1 Pamulang, Tangerang Selatan',
+    desc: 'Studied graphic design, visual storytelling, and digital media over a three-year vocational program.',
     tags: ['Graduated'],
   },
   {
     icon: 'fa-atom',
     period: '2026 – Present',
-    degree: 'Bachelor of Physics — Active Student',
-    school: 'UIN Syarif Hidayatullah Jakarta — Faculty of Science and Technology',
-    desc: 'Currently pursuing a Physics degree with a focus on building scientific and analytical thinking, while continuously expanding skills in technology and scientific computing.',
+    degree: 'Bachelor of Physics',
+    school: 'UIN Syarif Hidayatullah Jakarta, Faculty of Science and Technology',
+    desc: 'Studying core physics alongside computational science, applied mathematics, and data analysis.',
     tags: ['2026', 'Active'],
   },
   {
     icon: 'fa-laptop-code',
     period: '2023 – Present',
-    degree: 'Self-Learning — Tech & Cybersecurity',
-    school: 'Online — TryHackMe, freeCodeCamp, Cisco, Fortinet',
-    desc: 'Consistently self-studying web development, digital security, Python, and digital forensics through online platforms and hands-on practice via CTF competitions.',
+    degree: 'Self-Taught (Tech & Cybersecurity)',
+    school: 'Online via TryHackMe, freeCodeCamp, Pico, and Fortinet',
+    desc: 'Learning web development, network security, Python, and digital forensics through interactive labs and CTF competitions.',
     tags: [],
   },
 ]
@@ -32,7 +32,7 @@ const Education = () => {
         <div className="section-label reveal">Education</div>
         <h2 className="section-title reveal">Academic Background</h2>
         <p className="section-desc reveal" style={{ marginBottom: '3rem' }}>
-          An academic journey that shapes the way I think — from visual arts to exact sciences.
+          An academic track bridging visual arts and the exact sciences.
         </p>
 
         <div className="edu-grid">

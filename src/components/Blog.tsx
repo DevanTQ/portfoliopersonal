@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type BlogPost = {
   icon: string;
@@ -9,68 +9,56 @@ type BlogPost = {
   href: string;
 };
 
-const BLOG_ID = "6370908641104516933";
-const API_KEY = "AIzaSyA0ZTb9EgQWJ25dxb8g6qM3x8eGQ01LCus";
-const BLOGGER_API = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&maxResults=6`;
-
-const Blog = () => {
-  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
+const Blog = ({ posts }: { posts: BlogPost[] }) => {
+  const isCompact = posts.length < 3;
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    fetch(BLOGGER_API)
-      .then((res) => res.json())
-      .then((data) => {
-        const entries = data.items || [];
-        const posts: BlogPost[] = entries.map((entry: any) => ({
-          icon: "fa-pen-nib",
-          cat: entry.labels?.[0] || "Blog",
-          title: entry.title,
-          excerpt:
-            entry.content?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." || "",
-          date: new Date(entry.published).toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          }),
-          href: entry.url || "#",
-        }));
-        setBlogPosts(posts);
-      })
-      .catch(() => setBlogPosts([]))
-      .finally(() => setLoading(false));
+    // IntersectionObserver mandiri khusus untuk komponen Blog (React Island)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" } // Sesuaikan opsi threshold dengan main.js lo jika perlu
+    );
+
+    // Grab semua elemen yang mau di-animate di dalam section ini
+    const elements = sectionRef.current?.querySelectorAll(".reveal-react");
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
-  const isCompact = blogPosts.length < 3;
-
   return (
-    <section id="blog" className="full">
+    // Tambahkan ref ke container utama
+    <section id="blog" className="full" ref={sectionRef}>
       <div className="blog-inner">
-        <div className="section-label reveal">Blog & Writing</div>
-        <h2 className="section-title reveal">Latest Posts</h2>
-        <p className="section-desc reveal">
-          Notes, thoughts, and explorations on science, technology, and
-          things I'm currently learning.
+        {/* Ganti SEMUA class 'reveal' menjadi 'reveal-react' */}
+        <div className="section-label reveal-react">Blog & Writing</div>
+        <h2 className="section-title reveal-react">Latest Posts</h2>
+        <p className="section-desc reveal-react">
+          Notes and writeups on science, tech, and whatever I happen to be
+          digging into lately.
         </p>
 
-        {loading ? (
-          <div className="blog-empty reveal">
-            <i className="fa-solid fa-spinner fa-spin"></i>
-            <p>Loading posts...</p>
-          </div>
-        ) : blogPosts.length === 0 ? (
-          <div className="blog-empty reveal">
+        {posts.length === 0 ? (
+          <div className="blog-empty reveal-react">
             <i className="fa-solid fa-pen-to-square"></i>
-            <p>No posts yet.</p>
-            <span>Stay tuned for my first article!</span>
+            <p>Nothing here yet.</p>
+            <span>First article coming soon.</span>
           </div>
         ) : (
           <>
-            <div
-              className={`blog-grid${isCompact ? " blog-grid-compact" : ""}`}
-              id="blogGrid"
-            >
-              {blogPosts.map((post) => (
-                <div className="blog-card reveal" key={post.title}>
+            <div className={`blog-grid${isCompact ? " blog-grid-compact" : ""}`} id="blogGrid">
+              {posts.map((post) => (
+                <div className="blog-card reveal-react" key={post.title}>
                   <div className="blog-thumb">
                     <i className={`fa-solid ${post.icon}`}></i>
                   </div>
@@ -80,12 +68,7 @@ const Blog = () => {
                     <div className="blog-excerpt">{post.excerpt}</div>
                     <div className="blog-meta">
                       <span className="blog-date">{post.date}</span>
-                      <a
-                        href={post.href}
-                        className="blog-read"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={post.href} className="blog-read" target="_blank" rel="noopener noreferrer">
                         Read <i className="fa-solid fa-arrow-right"></i>
                       </a>
                     </div>
@@ -93,24 +76,10 @@ const Blog = () => {
                 </div>
               ))}
             </div>
-
-            {blogPosts.length >= 3 && (
-              <div
-                style={{ textAlign: "center", marginTop: "3rem" }}
-                className="reveal"
-                id="blogMoreBtn"
-              >
-                <a
-                  href="https://northfous.blogspot.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                >
-                  All Posts{" "}
-                  <i
-                    className="fa-solid fa-arrow-right"
-                    style={{ marginLeft: "0.25rem" }}
-                  ></i>
+            {posts.length >= 3 && (
+              <div style={{ textAlign: "center", marginTop: "3rem" }} className="reveal-react" id="blogMoreBtn">
+                <a href="https://northfous.blogspot.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                  All Posts <i className="fa-solid fa-arrow-right" style={{ marginLeft: "0.25rem" }}></i>
                 </a>
               </div>
             )}

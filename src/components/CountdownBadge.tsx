@@ -23,7 +23,7 @@ const CountdownBadge = ({ targetDate, label }: Props) => {
         marginBottom: '0.5rem',
       }}>
         <i className="fa-solid fa-flag-checkered"></i>
-        {label} — Completed
+        {label} (Completed)
       </div>
     )
   }

@@ -40,10 +40,10 @@ window.addEventListener("scroll", () => {
   });
 });
 
-let revealObs, barObs;
+let revealObs, barObs, revealMutationObs;
 
 function initReveal() {
-  const revealEls = document.querySelectorAll(".reveal,.reveal-left,.reveal-right");
+  // --- Reveal-on-scroll observer (existing behaviour, unchanged) ---
   revealObs = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -52,8 +52,19 @@ function initReveal() {
     },
     { threshold: 0.1 }
   );
-  revealEls.forEach((el) => revealObs.observe(el));
 
+  const observeReveal = (el) => {
+    // Avoid double-observing the same element
+    if (el._revealObserved) return;
+    el._revealObserved = true;
+    revealObs.observe(el);
+  };
+
+  document
+    .querySelectorAll(".reveal,.reveal-left,.reveal-right")
+    .forEach(observeReveal);
+
+  // --- Skill bar observer (existing behaviour, unchanged) ---
   barObs = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -66,10 +77,51 @@ function initReveal() {
     },
     { threshold: 0.2 }
   );
-  document.querySelectorAll(".about-chart-card").forEach((el) => barObs.observe(el));
+
+  const observeBar = (el) => {
+    if (el._barObserved) return;
+    el._barObserved = true;
+    barObs.observe(el);
+  };
+
+  document.querySelectorAll(".about-chart-card").forEach(observeBar);
+
+  // --- NEW: MutationObserver to catch elements added/replaced AFTER this
+  // point in time. This matters because React islands (client:load /
+  // client:visible) can hydrate and re-render their subtree *after*
+  // initReveal() has already run once — e.g. after a hydration mismatch
+  // forces React to discard server HTML and re-render client-side, or
+  // simply because a React island hydrates later than this timer fires.
+  // Without this, any .reveal element created/replaced after this point
+  // never gets observed, never gets the `visible` class, and stays
+  // permanently invisible if your CSS hides .reveal by default.
+  if (revealMutationObs) revealMutationObs.disconnect();
+
+  revealMutationObs = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType !== 1) return; // only element nodes
+
+        if (node.matches?.(".reveal,.reveal-left,.reveal-right")) {
+          observeReveal(node);
+        }
+        node
+          .querySelectorAll?.(".reveal,.reveal-left,.reveal-right")
+          .forEach(observeReveal);
+
+        if (node.matches?.(".about-chart-card")) {
+          observeBar(node);
+        }
+        node.querySelectorAll?.(".about-chart-card").forEach(observeBar);
+      });
+    }
+  });
+
+  revealMutationObs.observe(document.body, { childList: true, subtree: true });
 
   window.revealObs = revealObs;
   window.barObs = barObs;
+  window.revealMutationObs = revealMutationObs;
 }
 
 Chart.defaults.color = "#6a6a6a";

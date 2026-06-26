@@ -14,9 +14,9 @@ const Hero = () => {
               Physics Student & Technology Enthusiast
             </p>
             <p className="hero-desc reveal" style={{ transitionDelay: '0.2s' }}>
-              A Physics student at UIN Jakarta who sees technology through the lens of science.
-              Focused on exploring Cybersecurity and Vulnerability Research — combining analytical
-              precision with a deep curiosity for understanding how systems really work.
+              A Physics student at UIN Jakarta who views technology through a scientific lens. 
+              I focus on cybersecurity and vulnerability research, blending analytical precision 
+              with a genuine curiosity for how systems operate.
             </p>
             <div className="hero-actions reveal" style={{ transitionDelay: '0.25s' }}>
               <a href="#works" className="btn-primary">
@@ -50,7 +50,7 @@ const Hero = () => {
                     <div className="sc-footer">
                       <div className="sc-ornament">✦ ✦ ✦</div>
                       <div className="sc-name">Physics & Science</div>
-                      <div className="sc-title">UIN Jakarta · 2026</div>
+                      <div className="sc-title">UIN Jakarta, 2026</div>
                     </div>
                     <div className="sc-num">20</div>
                   </div>
@@ -69,7 +69,7 @@ const Hero = () => {
                     <div className="sc-footer">
                       <div className="sc-ornament sc-ornament--accent">★ ★ ★</div>
                       <div className="sc-name sc-name--light">Devandra El Syadam</div>
-                      <div className="sc-title sc-title--accent">Physics · Cybersecurity</div>
+                      <div className="sc-title sc-title--accent">Physics & Cybersecurity</div>
                     </div>
                     <div className="sc-num sc-num--accent">05.</div>
                   </div>
@@ -88,7 +88,7 @@ const Hero = () => {
                     <div className="sc-footer">
                       <div className="sc-ornament">✦ ✦ ✦</div>
                       <div className="sc-name">Digital Forensics</div>
-                      <div className="sc-title">Me?</div>
+                      <div className="sc-title">Research</div>
                     </div>
                     <div className="sc-num">2008</div>
                   </div>

@@ -17,26 +17,37 @@ import Highlights from '../components/Highlights'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
-// 1. Fetch data di sisi server (aman & SEO friendly)
+// 1. Fetch data di sisi server
 const BLOG_ID = import.meta.env.BLOG_ID;
 const API_KEY = import.meta.env.BLOGGER_API_KEY;
 const BLOGGER_API = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&maxResults=6`;
 
+console.log("DEBUG - BLOG_ID:", BLOG_ID);
+console.log("DEBUG - API_KEY:", API_KEY ? "TERISI" : "KOSONG");
+
+if (!BLOG_ID || !API_KEY) {
+  console.error("ERROR: Environment variable tidak terbaca!");
+}
+
 let posts = [];
+
 try {
   const res = await fetch(BLOGGER_API);
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
+  }
   const data = await res.json();
   const entries = data.items || [];
   
   posts = entries.map((entry: any) => ({
     icon: "fa-pen-nib",
     cat: entry.labels?.[0] || "Blog",
-    title: entry.title,
-    excerpt: entry.content?.replace(/<[^>]+>/g, "").slice(0, 120) + "..." || "",
-    date: new Date(entry.published).toLocaleDateString("en-US", {
+    title: entry.title || "Untitled",
+    excerpt: entry.content ? entry.content.replace(/<[^>]+>/g, "").slice(0, 120) + "..." : "",
+    date: entry.published ? new Date(entry.published).toLocaleDateString("en-US", {
       month: "short",
       year: "numeric",
-    }),
+    }) : "",
     href: entry.url || "#",
   }));
 } catch (e) {
@@ -76,7 +87,6 @@ try {
     <div class="gradient-divider" />
     <Metrics client:load />
 
-    <!-- 2. Lempar data 'posts' ke komponen Blog -->
     <Blog posts={posts} client:visible />
 
     <div class="gradient-divider" />

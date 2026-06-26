@@ -14,7 +14,6 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // IntersectionObserver mandiri khusus untuk komponen Blog (React Island)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,7 +26,6 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" } // Sesuaikan opsi threshold dengan main.js lo jika perlu
     );
 
-    // Grab semua elemen yang mau di-animate di dalam section ini
     const elements = sectionRef.current?.querySelectorAll(".reveal-react");
     elements?.forEach((el) => observer.observe(el));
 
@@ -37,10 +35,8 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
   }, []);
 
   return (
-    // Tambahkan ref ke container utama
     <section id="blog" className="full" ref={sectionRef}>
       <div className="blog-inner">
-        {/* Ganti SEMUA class 'reveal' menjadi 'reveal-react' */}
         <div className="section-label reveal-react">Blog & Writing</div>
         <h2 className="section-title reveal-react">Latest Posts</h2>
         <p className="section-desc reveal-react">
@@ -78,7 +74,7 @@ const Blog = ({ posts }: { posts: BlogPost[] }) => {
             </div>
             {posts.length >= 3 && (
               <div style={{ textAlign: "center", marginTop: "3rem" }} className="reveal-react" id="blogMoreBtn">
-                <a href="https://northfous.blogspot.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                <a href="https://chiperwave.blogspot.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                   All Posts <i className="fa-solid fa-arrow-right" style={{ marginLeft: "0.25rem" }}></i>
                 </a>
               </div>

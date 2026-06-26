@@ -24,13 +24,10 @@ const socials = [
 ]
 
 const Footer = () => {
-  // 1. Tambahkan state untuk mengontrol kapan tombol muncul
   const [isVisible, setIsVisible] = useState(false);
 
-  // 2. Gunakan useEffect untuk memantau scroll murni dari React
   useEffect(() => {
     const toggleVisibility = () => {
-      // Munculkan tombol jika di-scroll lebih dari 300px
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -40,7 +37,6 @@ const Footer = () => {
 
     window.addEventListener('scroll', toggleVisibility);
 
-    // Cleanup event listener
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -52,7 +48,6 @@ const Footer = () => {
         <div className="footer-inner">
           <div className="footer-top">
 
-            {/* Brand Section */}
             <div>
               <div className="footer-brand-name">Devandra El Syadam</div>
               <div className="footer-brand-desc">
@@ -68,7 +63,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Navigation Columns */}
             <div>
               <div className="footer-col-title">Navigation</div>
               <ul className="footer-links">
@@ -110,7 +104,6 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* 3. Gunakan state isVisible untuk mengontrol class */}
       <button 
         className={`scroll-top ${isVisible ? 'visible' : ''}`} 
         id="scrollTop" 

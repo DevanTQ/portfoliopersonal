@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 type FormData = {
   name: string
@@ -6,6 +6,13 @@ type FormData = {
   subject: string
   message: string
 }
+
+type ToastType = 'success' | 'error'
+
+type ToastState = {
+  type: ToastType
+  message: string
+} | null
 
 const contactItems = [
   { icon: 'fa-regular fa-envelope',   label: 'Email',         val: 'devandraelsyadam1@gmail.com' },
@@ -24,6 +31,15 @@ const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', subject: '', message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [toast, setToast] = useState<ToastState>(null)
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const showToast = (type: ToastType, message: string) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current)
+    setToast({ type, message })
+    toastTimer.current = setTimeout(() => setToast(null), 4500)
+  }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -33,6 +49,8 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (isSubmitting) return
+    setIsSubmitting(true)
 
     const body = new URLSearchParams({
       'form-name': 'contact',
@@ -48,12 +66,14 @@ const Contact = () => {
 
       if (res.ok) {
         setFormData({ name: '', email: '', subject: '', message: '' })
-        alert('Message sent!')
+        showToast('success', "Message sent. I'll get back to you within a business day.")
       } else {
-        alert('Failed to send message. Please try again.')
+        showToast('error', "Couldn't send your message. Please try again.")
       }
     } catch {
-      alert('Something went wrong. Please try again.')
+      showToast('error', 'Something went wrong. Check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -150,12 +170,41 @@ const Contact = () => {
               />
             </div>
 
-            <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start' }}>
-              <i className="fa-solid fa-paper-plane"></i> Send Message
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{ alignSelf: 'flex-start' }}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <><i className="fa-solid fa-spinner fa-spin"></i> Sending...</>
+              ) : (
+                <><i className="fa-solid fa-paper-plane"></i> Send Message</>
+              )}
             </button>
           </form>
         </div>
 
+      </div>
+
+      {/* ===== Toast notification — pengganti alert() bawaan browser ===== */}
+      <div className={`contact-toast${toast ? ' contact-toast--visible' : ''}${toast?.type === 'error' ? ' contact-toast--error' : ''}`}>
+        {toast && (
+          <>
+            <div className="contact-toast-icon">
+              <i className={`fa-solid ${toast.type === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'}`}></i>
+            </div>
+            <div className="contact-toast-text">{toast.message}</div>
+            <button
+              type="button"
+              className="contact-toast-close"
+              onClick={() => setToast(null)}
+              aria-label="Dismiss notification"
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
+          </>
+        )}
       </div>
     </section>
   )

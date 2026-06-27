@@ -54,6 +54,12 @@ const Works = () => {
     (w) => activeFilter === 'all' || w.cat.includes(activeFilter)
   )
 
+  // Tentukan modifier class grid berdasarkan jumlah project yang tampil.
+  // Logic kolom dipindah ke CSS (works-grid--one/two/many) supaya bisa
+  // di-override dengan media query di mobile.
+  const gridModifier =
+    filtered.length === 1 ? 'one' : filtered.length === 2 ? 'two' : 'many'
+
   return (
     <section id="works" className="full">
       <div className="works-inner">
@@ -76,21 +82,9 @@ const Works = () => {
         </div>
 
         <div
-          className="works-grid"
+          className={`works-grid works-grid--${gridModifier}`}
           id="worksGrid"
           ref={gridRef}
-          style={{
-            display: 'grid',
-            gridTemplateColumns:
-              filtered.length === 1
-                ? 'minmax(0, 420px)'
-                : filtered.length === 2
-                ? 'repeat(2, minmax(0, 420px))'
-                : 'repeat(3, minmax(0, 1fr))',
-            gap: '1.5rem',
-            width: '100%',
-            justifyContent: filtered.length < 3 ? 'center' : 'unset',
-          }}
         >
           {filtered.length === 0 ? (
             <div

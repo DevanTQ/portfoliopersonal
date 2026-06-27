@@ -50,10 +50,11 @@ const Metrics = () => {
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: { legend: { display: false } },
             scales: {
               x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'rgba(255,255,255,0.5)' } },
-              y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'rgba(255,255,255,0.5)', stepSize: 1 } },
+              y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'rgba(255,255,255,0.5)', stepSize: 1 }, min: 0 },
             },
           },
         })
@@ -93,6 +94,7 @@ const Metrics = () => {
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
               legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 }, color: '#6a6a6a' } },
             },
@@ -120,11 +122,15 @@ const Metrics = () => {
         <div className="growth-charts-grid reveal">
           <div className="about-chart-card" style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)' }}>
             <div className="about-chart-title">Project Volume (2023 – 2026)</div>
-            <canvas id="barChartMetrics" style={{ maxHeight: '240px' }}></canvas>
+            <div className="metrics-chart-canvas-wrap">
+              <canvas id="barChartMetrics"></canvas>
+            </div>
           </div>
           <div className="about-chart-card" style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,255,255,0.1)' }}>
             <div className="about-chart-title">Skill Growth Over Time</div>
-            <canvas id="lineChartMetrics" style={{ maxHeight: '240px' }}></canvas>
+            <div className="metrics-chart-canvas-wrap">
+              <canvas id="lineChartMetrics"></canvas>
+            </div>
           </div>
         </div>
 

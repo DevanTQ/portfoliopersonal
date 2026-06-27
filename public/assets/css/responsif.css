@@ -1,3 +1,13 @@
+/* ==== METRICS CHART CANVAS WRAPPER — base height (semua ukuran layar) ====
+   Diperlukan karena Chart.js dipakai dengan maintainAspectRatio:false,
+   sehingga canvas butuh parent dengan tinggi pasti agar tidak collapse
+   jadi 0px. Override di breakpoint mobile ada di mobile-fix.css. */
+.metrics-chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 240px;
+}
+
 @media(max-width:960px) {
     .nav-links {
         display: none;
@@ -46,6 +56,64 @@
         display: none;
     }
 }
+
+/* =====================================================
+   WORKS / SELECTED PROJECTS — GRID FIX
+   (logic kolom dipindah dari inline style JS ke CSS
+   supaya bisa di-override dengan media query)
+   ===================================================== */
+
+.works-grid {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.works-grid--one {
+    grid-template-columns: minmax(0, 420px);
+    justify-content: center;
+}
+
+.works-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: center;
+}
+
+.works-grid--many {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: unset;
+}
+
+@media(max-width:900px) {
+    .works-grid--many {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:600px) {
+    .works-grid--one,
+    .works-grid--two,
+    .works-grid--many {
+        grid-template-columns: 1fr;
+        justify-content: unset;
+    }
+
+    .works-inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .work-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* =====================================================
+   END WORKS GRID FIX
+   ===================================================== */
 
 .mobile-menu {
     display: none;
@@ -276,10 +344,106 @@
 }
 
 /* =====================================================
+   SKILLS SECTION — CHART (desktop) vs PROGRESS BAR (mobile)
+   Hanya berlaku untuk domain Cyber & Forensics dan Web & Tools
+   (bar chart & line chart yang labelnya numpuk/miring di mobile).
+   Physics (radar) dan Design (donut) tetap pakai chart di semua ukuran.
+   ===================================================== */
+
+/* Desktop/tablet (≥769px): progress bar disembunyikan (chart tetap tampil) */
+.progress-only-mobile {
+    display: none;
+}
+
+/* --- Progress bar styling (dipakai di mobile, tab cyber & web) --- */
+.skills-progress-card {
+    background: var(--card-bg, rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+}
+
+.skill-progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.skill-progress-row {
+    width: 100%;
+}
+
+.skill-progress-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    gap: 0.5rem;
+}
+
+.skill-progress-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary, #d4d4d4);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.skill-progress-value {
+    font-size: 0.78rem;
+    color: #c9a96e;
+    font-weight: 700;
+    font-family: var(--font-display, inherit);
+    flex-shrink: 0;
+}
+
+.skill-progress-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.skill-progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(201, 169, 110, 0.55), rgba(201, 169, 110, 1));
+    transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================================================
    SKILLS SECTION — MOBILE FIX (revised)
    ===================================================== */
 
 @media(max-width:768px) {
+
+    /* Mobile: untuk tab cyber & web, sembunyikan chart, tampilkan progress bar.
+       .chart-hide-on-mobile hanya ditambahkan di JSX untuk tab cyber & web,
+       jadi physics & design TIDAK terkena rule ini dan chart-nya tetap tampil. */
+    .chart-hide-on-mobile {
+        display: none !important;
+    }
+
+    .progress-only-mobile {
+        display: block !important;
+    }
+
+    .skills-progress-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.25rem 1.1rem;
+        overflow: hidden;
+    }
+
+    .skills-progress-card .about-chart-title {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .skill-progress-label {
+        font-size: 0.8rem;
+    }
 
     /* --- Wrapper utama --- */
     .skills-inner {

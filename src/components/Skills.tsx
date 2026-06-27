@@ -67,6 +67,31 @@ const chartByDomain: Record<string, { id: string; label: string }> = {
   web:     { id: 'lineChart',     label: 'Skill Growth: Web & Programming' },
 }
 
+// Data skor (0-100) — sama persis dengan dataset di main.js (initChart).
+// Dipakai untuk render progress bar list di mobile, KHUSUS untuk domain
+// 'cyber' dan 'web' (bar chart & line chart yang labelnya numpuk/miring
+// di layar kecil). Domain 'physics' (radar) dan 'design' (donut) tetap
+// pakai chart Canvas seperti biasa karena tidak ada masalah keterbacaan.
+// NOTE: kalau dataset di main.js diubah, sesuaikan juga angka di sini.
+const progressByDomain: Partial<Record<string, { label: string; value: number }[]>> = {
+  cyber: [
+    { label: 'Web Exploitation',  value: 65 },
+    { label: 'Digital Forensics', value: 68 },
+    { label: 'OSINT',             value: 70 },
+    { label: 'Binary Pwn',        value: 45 },
+    { label: 'Malware Analysis',  value: 50 },
+    { label: 'Linux/Bash',        value: 72 },
+  ],
+  web: [
+    { label: 'HTML/CSS/JS',         value: 80 },
+    { label: 'Python',              value: 70 },
+    { label: 'SEO & Performance',   value: 72 },
+  ],
+}
+
+// Domain yang pakai progress bar di mobile (selain ini, tetap pakai chart Canvas)
+const PROGRESS_DOMAINS = ['cyber', 'web']
+
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('physics')
 
@@ -104,6 +129,18 @@ const Skills = () => {
     }
 
     tryInitChart()
+
+    // Re-trigger progress bar width animation setiap kali tab ganti,
+    // supaya animasinya berjalan ulang (bukan cuma sekali saat pertama visible).
+    requestAnimationFrame(() => {
+      const panel = document.getElementById(`panel-${activeTab}`)
+      panel?.querySelectorAll<HTMLDivElement>('.skill-progress-fill').forEach((bar) => {
+        bar.style.width = '0%'
+        requestAnimationFrame(() => {
+          bar.style.width = bar.dataset.value + '%'
+        })
+      })
+    })
   }, [activeTab])
 
   return (
@@ -136,7 +173,15 @@ const Skills = () => {
               id={`panel-${tab.id}`}
             >
               <div className="skills-grid" style={{ marginTop: 0 }}>
-                <div className="skills-chart-scroll-wrap">
+                {/* ===== Chart Canvas =====
+                    - physics & design: selalu tampil (desktop & mobile)
+                    - cyber & web: tampil di desktop, disembunyikan di mobile
+                      (diganti progress bar di bawah) */}
+                <div
+                  className={`skills-chart-scroll-wrap${
+                    PROGRESS_DOMAINS.includes(tab.id) ? ' chart-hide-on-mobile' : ''
+                  }`}
+                >
                   <div className="skills-chart-card">
                     <div className="about-chart-title" style={{ marginBottom: '1.5rem' }}>
                       {chartByDomain[tab.id].label}
@@ -147,6 +192,32 @@ const Skills = () => {
                     ></canvas>
                   </div>
                 </div>
+
+                {/* ===== Progress Bar List — hanya untuk cyber & web, mobile-only ===== */}
+                {PROGRESS_DOMAINS.includes(tab.id) && (
+                  <div className="skills-progress-card progress-only-mobile">
+                    <div className="about-chart-title" style={{ marginBottom: '1.25rem' }}>
+                      {chartByDomain[tab.id].label}
+                    </div>
+                    <div className="skill-progress-list">
+                      {progressByDomain[tab.id]!.map((item) => (
+                        <div className="skill-progress-row" key={item.label}>
+                          <div className="skill-progress-top">
+                            <span className="skill-progress-label">{item.label}</span>
+                            <span className="skill-progress-value">{item.value}%</span>
+                          </div>
+                          <div className="skill-progress-track">
+                            <div
+                              className="skill-progress-fill"
+                              data-value={item.value}
+                              style={{ width: 0 }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="skills-list-card" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div>
